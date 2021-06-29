@@ -41,12 +41,12 @@
             link: "http://www.example.com"
         },*/
     // This is used in various text messages. You should also set <title> in index.html
-    "appName": "Terria Map",
+    "appName": "東京都デジタルツイン3Dビュワー",
 
     // See comments in lib/Views/global.scss for further information about customising colors, logos, fonts etc.
     "brandBarElements": [
       "",
-      "<a target=\"_blank\" href=\"https://terria.io\"><img src=\"images/terria_logo.png\" height=\"52\" title=\"Version: {{version}}\" /></a>",
+      "<a target=\"_blank\" href=\"https://terria.io\" style=\"background: #fff; width: 100%;\" ><img src=\"images/tokyo_metro_logo.png\" style=\"height: 40px;\" title=\"Version: {{version}}\" /></a>",
       ""
     ],
     // Shown when things go wrong.
@@ -233,7 +233,7 @@
         "term": "helpContentTerm8.term",
         "content": "helpContentTerm8.content"
       }
-    ]
+    ],
     // Or direct strings
     // "helpContent": [
     //   {
@@ -366,5 +366,10 @@
     //       content: "The way the dataset appears in the preview window. We recommend true colour to search for cloud-free images"
     //   }
     // ]
+    "theme": {
+      "logoPaddingVertical": 0,
+      "logoPaddingHorizontal": 0,
+      "logoHeight": "72px"
+    }
   }
 }
