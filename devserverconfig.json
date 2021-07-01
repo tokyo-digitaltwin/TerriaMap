@@ -1,6 +1,5 @@
 {
   "port": 3001,
-
   "allowProxyFor": [
     "nicta.com.au",
     "gov.au",
@@ -21,6 +20,14 @@
     "gov",
     "gov.uk",
     "gov.nz",
-    "services.aremi.data61.io"
-  ]
+    "sample.aero3dpro.com.au",
+    "services.aremi.data61.io",
+    "services.aremi.data61.io",
+    "3.113.247.170",
+    "tokyo-digitaltwin.s3.ap-northeast-1.amazonaws.com"
+  ],
+  "basicAuthentication": {
+    "username": "td_test",
+    "password": "b44k31o16BS"
+  }
 }

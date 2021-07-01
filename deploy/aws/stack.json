@@ -32,7 +32,7 @@
   },
   "Parameters": {
     "HostedZoneName": {
-      "Default": "terria.io.",
+      "Default": "pss-terria.com.",
       "Type": "String"
     },
     "ImageId": {
@@ -160,7 +160,7 @@
             "InstancePort": "80",
             "LoadBalancerPort": "443",
             "Protocol": "HTTPS",
-            "SSLCertificateId": "arn:aws:acm:ap-southeast-2:278900443360:certificate/4162729d-14b1-435f-84e1-cb318b8f5934"
+            "SSLCertificateId": "arn:aws:acm:ap-northeast-1:407999471312:certificate/b6b51de1-b35b-4e94-b8d6-5fe360eabdb2"
           }
         ]
       },
@@ -308,8 +308,8 @@
                   "Action": ["s3:GetObject", "s3:PutObject"],
                   "Effect": "Allow",
                   "Resource": [
-                    "arn:aws:s3:::terriamap-sharing",
-                    "arn:aws:s3:::terriamap-sharing/*"
+                    "arn:aws:s3:::pss-terriamap-sharing",
+                    "arn:aws:s3:::pss-terriamap-sharing/*"
                   ]
                 }
               ]

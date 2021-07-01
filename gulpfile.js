@@ -283,7 +283,8 @@ gulp.task("make-package", function (done) {
 
   // if we are on OSX make sure to use gtar for compatibility with Linux
   // otherwise we see lots of error message when extracting with GNU tar
-  var tar = /^darwin/.test(process.platform) ? "gtar" : "tar";
+  // var tar = /^darwin/.test(process.platform) ? 'gtar' : 'tar';
+  var tar = 'tar';
 
   var tarResult = spawnSync(
     tar,
