@@ -30,12 +30,7 @@ export default function UserInterface(props) {
 
   return (
     <StandardUserInterface {...props} version={version}>
-      <MenuLeft>
-        <MenuItem caption="About" href="about.html" key="about-link" />
-        {relatedMaps && relatedMaps.length > 0 ? (
-          <RelatedMaps relatedMaps={relatedMaps} />
-        ) : null}
-      </MenuLeft>
+      <MenuLeft></MenuLeft>
       <ExperimentalMenu>
         {/* <If condition={isBrowserSupportedAV()}>
           <SplitPoint
