@@ -1,0 +1,14 @@
+{
+  "compass": {
+    "guidance": {
+      "ctrlDragDescription": "CTRLキーを押しながらドラッグしても地図を傾けたり回したりできます。",
+      "dismissText": "閉じて今後は表示しない",
+      "innerCircleDescription2": "また、ここをダブルクリックすると表示が初期状態に戻ります。",
+      "innerCircleDescription1": "内側の丸い部分をクリックして上下左右にゆっくりとドラッグすると、一度に地図を傾けたり回したりできます。",
+      "innerCircleTitle": "内側の円",
+      "outerRingDescription": "外側のリングをドラッグして回すと地図が回転します。",
+      "outerRingTitle": "外側のリング",
+      "title": "ジャイロスコープコントロール"
+    }
+  }
+}
