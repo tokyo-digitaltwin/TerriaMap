@@ -77,11 +77,11 @@
 
     // see `languageOverrides.json` in languages/en
     "languageConfiguration": {
-      "enabled": false,
+      "enabled": true,
       "debug": false,
       "languages": {
-        "en": "English",
-        "fr": "Français"
+        "ja": "日本語",
+        "en": "English"
       },
       "fallbackLanguage": "en"
     },
