@@ -1,6 +1,6 @@
 {
   /* Names of init files (in wwwroot/init), without the .json extension, to load by default */
-  "initializationUrls": ["https://script.google.com/macros/s/AKfycbzB11eS8g2zpDj4xt3_EVZ77aPFNWeTtKWQ2auchQXCjaEJg6JP9BdmJ84ZyVAOm35o/exec?name=staging&_=.json"],
+  "initializationUrls": ["https://tokyo-digitaltwin.s3.ap-northeast-1.amazonaws.com/catalog/staging.json"],
   "parameters": {
     "googleUrlShortenerKey": null,
     "googleAnalyticsKey": null,
@@ -41,16 +41,16 @@
             link: "http://www.example.com"
         },*/
     // This is used in various text messages. You should also set <title> in index.html
-    "appName": "東京都デジタルツイン3Dビュワー",
+    "appName": "東京都デジタルツイン3Dビューア",
 
     // See comments in lib/Views/global.scss for further information about customising colors, logos, fonts etc.
     "brandBarElements": [
       "",
-      "<a target=\"_blank\" href=\"https://terria.io\" style=\"background: #fff; width: 100%;\" ><img src=\"images/tokyo_metro_logo.png\" style=\"height: 40px;\" title=\"Version: {{version}}\" /></a>",
+      "<a target=\"_blank\" href=\"https://tokyo-digitaltwin.metro.tokyo.lg.jp/\" style=\"background: #fff; width: 100%;\" ><img src=\"images/tokyo_metro_logo.png\" style=\"height: 40px;\" title=\"Version: {{version}}\" /></a>",
       ""
     ],
     // Shown when things go wrong.
-    "supportEmail": "help@example.com",
+    "supportEmail": "support-3dview@ml.mri.co.jp",
     // You probably shouldn't change this.
     "proj4ServiceBaseUrl": "proj4def/",
     // Or this
@@ -62,6 +62,8 @@
     // Enable experimental features, since its nice to have the bleeding edge.
     // Disable it if things go wrong with the experimental features or your users aren't robust to features which might change or disapear completly.
     "experimentalFeatures": true,
+    "useCesiumIonTerrain": true,
+    "cesiumIonAccessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3NGI5ZDM0Mi1jZDIzLTRmMzEtOTkwYi0zZTk4Yzk3ODZlNzQiLCJpZCI6NDA2NDYsImlhdCI6MTYwODk4MzAwOH0.3rco62ErML11TMSEflsMqeUTCDbIH6o4n4l5sssuedE",
     // To enable welcome message when map first loads
     // "showWelcomeMessage": true,
     // To override the welcome message video displayed on the welcome message
