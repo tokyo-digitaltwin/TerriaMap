@@ -1,6 +1,6 @@
 {
   /* Names of init files (in wwwroot/init), without the .json extension, to load by default */
-  "initializationUrls": ["https://script.google.com/macros/s/AKfycbzB11eS8g2zpDj4xt3_EVZ77aPFNWeTtKWQ2auchQXCjaEJg6JP9BdmJ84ZyVAOm35o/exec?name=staging&_=.json"],
+  "initializationUrls": ["https://tokyo-digitaltwin.s3.ap-northeast-1.amazonaws.com/catalog/staging.json"],
   "parameters": {
     "googleUrlShortenerKey": null,
     "googleAnalyticsKey": null,
