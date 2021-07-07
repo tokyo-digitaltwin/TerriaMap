@@ -24,6 +24,8 @@ import BingMapsSearchProviderViewModel from 'terriajs/lib/Models/BingMapsSearchP
 import render from './lib/Views/render';
 import registerCatalogMembers from 'terriajs/lib/Models/registerCatalogMembers';
 import defined from 'terriajs-cesium/Source/Core/defined';
+import CustomComponent from 'terriajs/lib/ReactViews/Custom/CustomComponent';
+import IframeCutromComponent from './lib/Views/IframeCustomComponent';
 
 // Register all types of catalog members in the core TerriaJS.  If you only want to register a subset of them
 // (i.e. to reduce the size of your application if you don't actually use them all), feel free to copy a subset of
@@ -44,6 +46,7 @@ var terria = new Terria(terriaOptions);
 // Register custom components in the core TerriaJS.  If you only want to register a subset of them, or to add your own,
 // insert your custom version of the code in the registerCustomComponentTypes function here instead.
 registerCustomComponentTypes(terria);
+CustomComponent.register(new IframeCutromComponent());
 
 // Create the ViewState before terria.start so that errors have somewhere to go.
 const viewState = new ViewState({

@@ -1,4 +1,18 @@
 {
+  "tour": {
+    "exploreMapDataButton": {
+      "content": "## 登録済みデータ\n\nここでは、データカタログからデータを探し、地図に追加することができます。複数のデータも追加できます。追加したデータは、ワークベンチ内にリストとして表示されます。"
+    },
+    "mapNavigationSplitterIcon": {
+      "content": "## 比較\n\nTerriaでは、分割画面ビューを使用してデータセットを比較する強力な機能があります。衛星画像のように時系列要素を含むデータセットの場合、日付ピッカーをクリックして時間を進めたり戻したりしてデータの比較ができます。"
+    },
+    "menuBarMapSettingsButton": {
+      "content": "## 地図設定\n\nベースマップ、2D/3D地形、画質などのオプションを設定してパフォーマンスを上げることができます。"
+    },
+    "sidePanelUploadButton": {
+      "content": "## 自分のデータ\n\n手元にある独自のデータを他のデータセットと一緒に表示できます。CSV、GeoJSON、KML、GPX、CZMLなどのファイルフォーマットをサポートしています。"
+    }
+  },
   "compass": {
     "guidance": {
       "ctrlDragDescription": "CTRLキーを押しながらドラッグしても地図を傾けたり回したりできます。",
@@ -10,5 +24,42 @@
       "outerRingTitle": "外側のリング",
       "title": "ジャイロスコープコントロール"
     }
+  },
+  "story": {
+    "story": "ストーリー",
+    "recaptureStory": "リキャプチャ",
+    "panelBody": "地図を使ってストーリーを作成し、共有することができます"
+  },
+  "emptyWorkbench": {
+    "helpfulHintsOne": "「登録済みデータ」 を選択して使えるデータを探すか、「自分のデータ」 をクリックして自分のデータを地図に追加します。"
+  },
+  "welcomeMessage": {
+    "exploreDataBtnText": "登録済みデータ"
+  },
+  "featureInfo": {
+    "clickToAddData": "データをマップに追加するには 「$t(addData.addDataBtnText)」 をクリックします。"
+  },
+  "addData": {
+    "addDataBtnText": "登録済みデータ"
+  },
+  "dataType": {
+    "geojson": "GeoJSON",
+    "opendatasoft-group": "Opendatasoftポータル",
+    "sdmx-group": "SDMX-JSON"
+  },
+  "models": {
+    "catalog": {
+      "upload": "自分のデータ"
+    }
+  },
+  "tableData": {
+    "unsupportedCharactersTitle": "緯度・経度の列に無効な文字が含まれています",
+    "noData": "表示するデータがありません"
+  },
+  "openDataSoft": {
+    "viewDatasetPage": "データセットのページを見る"
+  },
+  "helpPanel": {
+    "menuPaneBody": "TerriaJS の使い方のヒントを得るには以下のガイドを読むか[support-3dview@ml.mri.co.jp](mailto:support-3dview@ml.mri.co.jp)で開発チームにメールしてください"
   }
 }
