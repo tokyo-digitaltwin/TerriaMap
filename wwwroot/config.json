@@ -3,7 +3,7 @@
   "initializationUrls": ["https://tokyo-digitaltwin.s3.ap-northeast-1.amazonaws.com/catalog/staging.json"],
   "parameters": {
     "googleUrlShortenerKey": null,
-    "googleAnalyticsKey": null,
+    "googleAnalyticsKey": "UA-201903650-1",
     "googleAnalyticsOptions": null,
 
     // Log ConsoleAnalytics events to console
