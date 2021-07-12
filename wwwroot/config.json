@@ -3,7 +3,7 @@
   "initializationUrls": ["https://tokyo-digitaltwin.s3.ap-northeast-1.amazonaws.com/catalog/staging.json"],
   "parameters": {
     "googleUrlShortenerKey": null,
-    "googleAnalyticsKey": null,
+    "googleAnalyticsKey": "UA-201903650-1",
     "googleAnalyticsOptions": null,
 
     // Log ConsoleAnalytics events to console
@@ -65,7 +65,7 @@
     "useCesiumIonTerrain": true,
     "cesiumIonAccessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3NGI5ZDM0Mi1jZDIzLTRmMzEtOTkwYi0zZTk4Yzk3ODZlNzQiLCJpZCI6NDA2NDYsImlhdCI6MTYwODk4MzAwOH0.3rco62ErML11TMSEflsMqeUTCDbIH6o4n4l5sssuedE",
     // To enable welcome message when map first loads
-    // "showWelcomeMessage": true,
+    "showWelcomeMessage": true,
     // To override the welcome message video displayed on the welcome message
     // By default, the Getting Started to Terria video is displayed
     // "welcomeMessageVideo": {
@@ -368,6 +368,8 @@
     //       content: "The way the dataset appears in the preview window. We recommend true colour to search for cloud-free images"
     //   }
     // ]
+    "bingMapsKey": "AuhGFviQx4QvSSYN0j2zPDYo9tg_6n4ZER-hOz_Wa9D1nhWS3N_1eUsb1zcZ_apI",
+    "storyEnabled": false,
     "theme": {
       "logoPaddingVertical": 0,
       "logoPaddingHorizontal": 0,
