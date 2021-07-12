@@ -28,8 +28,8 @@
         "tokyo-digitaltwin.s3.ap-northeast-1.amazonaws.com"
     ],
     "basicAuthentication": {
-        "username": "td_test",
-        "password": "b44k31o16BS"
+        "username": "td_staging",
+        "password": "m11s10b09Fab3"
     }
 }
 

@@ -32,7 +32,7 @@
   },
   "Parameters": {
     "HostedZoneName": {
-      "Default": "pss-terria.com.",
+      "Default": "tokyo-digitaltwin.metro.tokyo.lg.jp.",
       "Type": "String"
     },
     "ImageId": {
@@ -70,7 +70,10 @@
     "WebServerPort": {
       "Default": "80",
       "Type": "Number"
-    }
+    },
+    "SubDomain": {
+      "Type": "String"
+    }    
   },
   "Resources": {
     "AutoScalingGroup": {
@@ -164,7 +167,7 @@
             "InstancePort": "80",
             "LoadBalancerPort": "443",
             "Protocol": "HTTPS",
-            "SSLCertificateId": "arn:aws:acm:ap-northeast-1:407999471312:certificate/b6b51de1-b35b-4e94-b8d6-5fe360eabdb2"
+            "SSLCertificateId": "arn:aws:acm:ap-northeast-1:365028269323:certificate/74cbc3b3-eb44-4336-8101-f44553b1dd29"
           }
         ]
       },
