@@ -30,15 +30,16 @@
     "terriajs-server": "^3.3.4"
   },
   "config": {
-    "packageName": "dfltsample",
-    "awsProfile": "terria",
-    "awsS3PackagesPath": "s3://pss-terria-apps/map_mri_digitaltwin",
+    "packageName": "3dview-staging",
+    "stackName": "threedview-staging",
+    "awsProfile": "tokyo_dt",
+    "awsS3PackagesPath": "s3://tokyo-digitaltwin-terria-apps/map_digitaltwin",
     "awsRegion": "ap-northeast-1",
     "awsEc2InstanceType": "t3.small",
     "awsEc2ImageId": "ami-0b5a5c971fc30e5d1",
-    "awsKeyName": "3dimension_jp",
-    "awsS3ServerConfigOverridePath": "s3://pss-terria-apps/map_mri_digitaltwin/privateserverconfig-2016-08-31.json",
-    "awsS3ClientConfigOverridePath": "s3://pss-terria-apps/map_mri_digitaltwin/privateclientconfig-2018-11-19.json",
+    "awsKeyName": "viewer-tokyo-dt",
+    "awsS3ServerConfigOverridePath": "s3://tokyo-digitaltwin-terria-apps/map_digitaltwin/privateserverconfig-2016-08-31.json",
+    "awsS3ClientConfigOverridePath": "s3://tokyo-digitaltwin-terria-apps/map_digitaltwin/privateclientconfig-2018-11-19.json",
     "docker": {
       "name": "data61/terria-terriamap",
       "include": "wwwroot node_modules devserverconfig.json index.js package.json version.js"
@@ -111,8 +112,8 @@
     "hot": "webpack-dev-server --inline --config buildprocess/webpack.config.hot.js --hot --host 0.0.0.0",
     "deploy": "aws --profile $npm_package_config_awsProfile s3 ls && npm ci && npm run deploy-without-reinstall",
     "deploy-without-reinstall": "gulp clean && gulp release && npm run deploy-current",
-    "deploy-current": "npm run get-deploy-overrides && gulp make-package --packageName $npm_package_config_packageName --serverConfigOverride ./privateserverconfig.json --clientConfigOverride ./wwwroot/privateconfig.json && cd deploy/aws && ./stack create $npm_package_config_packageName && cd ../..",
-    "update-package": "gulp clean && gulp release && npm run get-deploy-overrides && gulp make-package --packageName $npm_package_config_packageName --serverConfigOverride ./privateserverconfig.json --clientConfigOverride ./wwwroot/privateconfig.json && cd deploy/aws && ./stack update $npm_package_config_packageName && cd ../..",
+    "deploy-current": "npm run get-deploy-overrides && gulp make-package --packageName $npm_package_config_packageName --serverConfigOverride ./privateserverconfig.json --clientConfigOverride ./wwwroot/privateconfig.json && cd deploy/aws && ./stack create $npm_package_config_packageName $npm_package_config_stackName && cd ../..",
+    "update-package": "gulp clean && gulp release && npm run get-deploy-overrides && gulp make-package --packageName $npm_package_config_packageName --serverConfigOverride ./privateserverconfig.json --clientConfigOverride ./wwwroot/privateconfig.json && cd deploy/aws && ./stack update $npm_package_config_packageName $npm_package_config_stackName && cd ../..",
     "get-deploy-overrides": "aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ServerConfigOverridePath ./privateserverconfig.json && aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ClientConfigOverridePath ./wwwroot/privateconfig.json",
     "prettier": "prettier --write .",
     "prettier-check": "prettier --check ."
