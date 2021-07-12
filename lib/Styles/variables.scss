@@ -26,12 +26,9 @@ $color-primary-dark:darken($color-primary,10%);
 $dark-darker: hsl(0,30%,15%);
 */
 
-$color-primary: #00a040;
-$dark: #0b5f29;
-// dark: 8% #6ae17a overlayed on #121212, as per the material design dark theme guidelines:
-// https://material.io/design/color/dark-theme.html#properties
-$dark-lighter: #286b3a;
-// dark-lighter: 8% #ffffff overlayed on #0b5f29, as per the material design recommendation.
+$color-primary: rgb(9, 49, 93);
+$dark: $color-primary;
+$dark-lighter: mix($dark, #fff, $weight: 80%);
 $dark-with-overlay: $dark-lighter;
 $focus-border-light-color: $text-light;
 $focus-border-dark-color: $text-dark;
