@@ -425,7 +425,9 @@
       "featureInfoShown": "以下には最初の{{maximum}}個が表示されています。",
       "featuresFound": "{catalogItemName}には{{featCount}}個のフィーチャーがあります。",
       "moreThanMax": "{{catalogItemName}}には{{maximum}}個以上のフィーチャーがあります。"
-    }
+    },
+    "showRawData": "元のデータを表示",
+    "showCuratedData": "整形されたデータを表示"
   },
   "sui": {
     "hideWorkbench": "ワークベンチを非表示",
@@ -1462,6 +1464,15 @@
       "initErrorTitle": "サービスの初期化に失敗",
       "proxyableDomainsDeprecation": "`proxyableDomainsUrl` は v8 ではサポートしていません",
       "loadConfigErrorTitle": "Terria Map config の読み込みに失敗"
+    },
+    "shadow": {
+      "name": "影",
+      "options": {
+        "none": "なし",
+        "cast": "投影のみ",
+        "receive": "受光のみ",
+        "both": "投影と受光"
+      }
     },
     "commonModelErrors": {
       "datasetScaleErrorMessage": "データセット {{name}} はあまりズームすると表示されないようにデータ提供者が設定しています。データセットの情報ボタンをクリックしてよし詳細な情報を参照してください。",
