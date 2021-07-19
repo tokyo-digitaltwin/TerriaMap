@@ -374,6 +374,7 @@
       "logoPaddingVertical": 0,
       "logoPaddingHorizontal": 0,
       "logoHeight": "72px"
-    }
+    },
+    "disableSplitter": true
   }
 }
