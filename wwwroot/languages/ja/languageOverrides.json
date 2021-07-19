@@ -450,6 +450,7 @@
     "btnText": "ヘルプ"
   },
   "helpPanel": {
+    "btnText": "ヘルプ",
     "menuPaneTitle": "使い方",
     "takeTour": "ツアーを見る",
     "dismissText": "閉じる",
