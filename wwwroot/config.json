@@ -41,12 +41,12 @@
             link: "http://www.example.com"
         },*/
     // This is used in various text messages. You should also set <title> in index.html
-    "appName": "東京都デジタルツイン3Dビューア",
+    "appName": "東京都デジタルツイン3Dビューア (β版)",
 
     // See comments in lib/Views/global.scss for further information about customising colors, logos, fonts etc.
     "brandBarElements": [
       "",
-      "<a target=\"_blank\" href=\"https://tokyo-digitaltwin.metro.tokyo.lg.jp/\" style=\"background: #fff; width: 100%;\" ><img src=\"images/tokyo_metro_logo.png\" style=\"height: 40px;\" title=\"Version: {{version}}\" /></a>",
+      "<a target=\"_blank\" href=\"https://tokyo-digitaltwin.metro.tokyo.lg.jp/\" style=\"background: #fff; width: 100%;\" ><img src=\"images/tokyo_metro_logo.png\" style=\"width: 280px;\" title=\"Version: {{version}}\" /></a>",
       ""
     ],
     // Shown when things go wrong.
