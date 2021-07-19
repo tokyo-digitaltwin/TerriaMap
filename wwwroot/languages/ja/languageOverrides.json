@@ -401,11 +401,11 @@
   },
   "welcomeMessage": {
     "dismissText": "閉じて今後は表示しない",
-    "exploreDataBtnText": "データを見る",
+    "exploreDataBtnText": "データを地図上で見る",
     "helpBtnText": "ヘルプを見る",
-    "tourBtnText": "ツアーに参加",
-    "welcomeMessage": "データを探して3D地図上に展開してみませんか？<br/>とにかく触ってみるか、ヘルプガイドで使い方の概要を見てみてください。",
-    "title": "ようこそ"
+    "tourBtnText": "操作方法を見る",
+    "welcomeMessage": "防災やまちづくりなど様々な分野のデータを、3D地図上に重ねてみることができます。(データは随時追加予定です)",
+    "title": "3Dビューアで東京を見てみよう！"
   },
   "featureInfo": {
     "noInfoAvailable": "情報はありません",
