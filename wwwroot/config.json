@@ -3,7 +3,7 @@
   "initializationUrls": ["https://tokyo-digitaltwin.s3.ap-northeast-1.amazonaws.com/catalog/staging.json"],
   "parameters": {
     "googleUrlShortenerKey": null,
-    "googleAnalyticsKey": "UA-201903650-1",
+    "googleAnalyticsKey": "UA-196433925-1",
     "googleAnalyticsOptions": null,
 
     // Log ConsoleAnalytics events to console
@@ -45,9 +45,10 @@
 
     // See comments in lib/Views/global.scss for further information about customising colors, logos, fonts etc.
     "brandBarElements": [
-      "",
-      "<a target=\"_blank\" href=\"https://tokyo-digitaltwin.metro.tokyo.lg.jp/\" style=\"background: #fff; width: 100%;\" ><img src=\"images/tokyo_metro_logo.png\" style=\"width: 280px;\" title=\"Version: {{version}}\" /></a>",
-      ""
+      "<a target=\"_blank\" href=\"https://tokyo-digitaltwin.metro.tokyo.lg.jp/\" style=\"background: #fff; width: 100%;\" rel=\"noopener\"><img src=\"images/tokyo_metro_logo.png\" style=\"width: 280px;\" title=\"東京都デジタルツイン3Dビューア (β版)\" /></a>"
+    ],
+    "brandBarSmallElements": [
+      "<a target=\"_blank\" href=\"https://tokyo-digitaltwin.metro.tokyo.lg.jp/\" style=\"display: flex;\" rel=\"noopener\"><img src=\"images/tokyo_metro_logo_small.png\" style=\"width: 120px;\"title=\"東京都デジタルツイン3Dビューア (β版)\" /></a>"
     ],
     // Shown when things go wrong.
     "supportEmail": "support-3dview@ml.mri.co.jp",
