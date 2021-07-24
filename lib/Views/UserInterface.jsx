@@ -34,7 +34,11 @@ export default function UserInterface(props) {
     <StandardUserInterface {...props} version={version}>
       <MenuLeft></MenuLeft>
       <Nav>
-        <MeasureTool terria={props.viewState.terria} key="measure-tool" />
+        <MeasureTool
+          terria={props.viewState.terria}
+          viewState={props.viewState}
+          key="measure-tool"
+        />
       </Nav>
       <ExperimentalMenu>
         {/* <If condition={isBrowserSupportedAV()}>
