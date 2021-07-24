@@ -3,7 +3,7 @@
   "initializationUrls": ["https://tokyo-digitaltwin.s3.ap-northeast-1.amazonaws.com/catalog/staging.json"],
   "parameters": {
     "googleUrlShortenerKey": null,
-    "googleAnalyticsKey": null,
+    "googleAnalyticsKey": "UA-196433925-1",
     "googleAnalyticsOptions": null,
 
     // Log ConsoleAnalytics events to console
@@ -41,13 +41,14 @@
             link: "http://www.example.com"
         },*/
     // This is used in various text messages. You should also set <title> in index.html
-    "appName": "東京都デジタルツイン3Dビューア",
+    "appName": "東京都デジタルツイン3Dビューア (β版)",
 
     // See comments in lib/Views/global.scss for further information about customising colors, logos, fonts etc.
     "brandBarElements": [
-      "",
-      "<a target=\"_blank\" href=\"https://tokyo-digitaltwin.metro.tokyo.lg.jp/\" style=\"background: #fff; width: 100%;\" ><img src=\"images/tokyo_metro_logo.png\" style=\"height: 40px;\" title=\"Version: {{version}}\" /></a>",
-      ""
+      "<a target=\"_blank\" href=\"https://tokyo-digitaltwin.metro.tokyo.lg.jp/\" style=\"background: #fff; width: 100%;\" rel=\"noopener\"><img src=\"images/tokyo_metro_logo.png\" style=\"width: 280px;\" title=\"東京都デジタルツイン3Dビューア (β版)\" /></a>"
+    ],
+    "brandBarSmallElements": [
+      "<a target=\"_blank\" href=\"https://tokyo-digitaltwin.metro.tokyo.lg.jp/\" style=\"display: flex;\" rel=\"noopener\"><img src=\"images/tokyo_metro_logo_small.png\" style=\"width: 120px;\"title=\"東京都デジタルツイン3Dビューア (β版)\" /></a>"
     ],
     // Shown when things go wrong.
     "supportEmail": "support-3dview@ml.mri.co.jp",
@@ -65,7 +66,7 @@
     "useCesiumIonTerrain": true,
     "cesiumIonAccessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3NGI5ZDM0Mi1jZDIzLTRmMzEtOTkwYi0zZTk4Yzk3ODZlNzQiLCJpZCI6NDA2NDYsImlhdCI6MTYwODk4MzAwOH0.3rco62ErML11TMSEflsMqeUTCDbIH6o4n4l5sssuedE",
     // To enable welcome message when map first loads
-    // "showWelcomeMessage": true,
+    "showWelcomeMessage": true,
     // To override the welcome message video displayed on the welcome message
     // By default, the Getting Started to Terria video is displayed
     // "welcomeMessageVideo": {
@@ -183,13 +184,13 @@
           //   ]
           // }
         ]
-      },
-      {
-        "icon": "story",
-        "itemName": "storymigration",
-        "markdownText": "## Share & Story Migration\n\n### Guide on updating share links, including stories\n\nIf you've received a warning telling you that a share link was based off an older version of TerriaJS, you'll want to do a few things to recreate them in the latest version of Terria!\n\n#### Creators\n\n1. Identify the share URL which causes a notification of share preservation effort when loading them into Terria. e.g. you may know where they are embedded, or come across them accidentally\n2. Open them in the newer (v8) based map application \n3. Check that everything is sharing as you expect, tweak the layers to fit if some are missing or not behaving correctly.\n4. Update the share link by clicking the Share/Print button and copy the new link\n5. If distribution of share link is known, update the url in your web page (if embedded), or send the new link to users \n\n#### Consumers\n1. Load the share URL\n2. If it doesn't quite look right, notify the provider so they can follow the above steps to recreate it in the latest version of Terria",
-        "title": "Share & Story migration"
       }
+      // {
+      //   "icon": "story",
+      //   "itemName": "storymigration",
+      //   "markdownText": "## Share & Story Migration\n\n### Guide on updating share links, including stories\n\nIf you've received a warning telling you that a share link was based off an older version of TerriaJS, you'll want to do a few things to recreate them in the latest version of Terria!\n\n#### Creators\n\n1. Identify the share URL which causes a notification of share preservation effort when loading them into Terria. e.g. you may know where they are embedded, or come across them accidentally\n2. Open them in the newer (v8) based map application \n3. Check that everything is sharing as you expect, tweak the layers to fit if some are missing or not behaving correctly.\n4. Update the share link by clicking the Share/Print button and copy the new link\n5. If distribution of share link is known, update the url in your web page (if embedded), or send the new link to users \n\n#### Consumers\n1. Load the share URL\n2. If it doesn't quite look right, notify the provider so they can follow the above steps to recreate it in the latest version of Terria",
+      //   "title": "Share & Story migration"
+      // }
       // For maps with satellite imagery, also see `showInAppGuides`
       // {
       //     "itemName": "satelliteimagery",
@@ -368,10 +369,13 @@
     //       content: "The way the dataset appears in the preview window. We recommend true colour to search for cloud-free images"
     //   }
     // ]
+    "bingMapsKey": "AuhGFviQx4QvSSYN0j2zPDYo9tg_6n4ZER-hOz_Wa9D1nhWS3N_1eUsb1zcZ_apI",
+    "storyEnabled": false,
     "theme": {
       "logoPaddingVertical": 0,
       "logoPaddingHorizontal": 0,
       "logoHeight": "72px"
-    }
+    },
+    "disableSplitter": true
   }
 }

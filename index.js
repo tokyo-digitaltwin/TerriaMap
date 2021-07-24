@@ -83,7 +83,10 @@ module.exports = terria.start({
         viewState.searchState.locationSearchProviders = [
             new BingMapsSearchProviderViewModel({
                 terria: terria,
-                key: terria.configParameters.bingMapsKey
+                key: terria.configParameters.bingMapsKey,
+                culture: "ja",
+                primaryCountry: "日本",
+                searchTextPrefix: "東京 "
             }),
             // new GazetteerSearchProviderViewModel({terria}),
             // new GnafSearchProviderViewModel({terria})
