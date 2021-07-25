@@ -107,7 +107,7 @@
         "trainerItems": [
           {
             "title": "stepbystepguide.gettingstarted.title",
-            "footnote": "stepbystepguide.gettingstarted.footnote",
+            "footnote": "",
             "steps": [
               {
                 "title": "stepbystepguide.gettingstarted.step1.title",
