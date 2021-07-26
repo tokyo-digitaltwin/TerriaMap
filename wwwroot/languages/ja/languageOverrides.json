@@ -620,7 +620,7 @@
     "yourName": "お名前（任意）",
     "close": "ご意見・ご要望を閉じる",
     "title": "ご意見・ご要望",
-    "feedbackPreamble": "皆様からの東京都「デジタルツイン実現プロジェクト」へのご意見・ご要望は<a target=\"_blank\" href=\"https://docs.google.com/forms/d/e/1FAIpQLSfjiMijo4bitkzUL2dST5DckYQsWo5NFEF_lDKUxshJiKkvPQ/viewform\">こちら</a>へお願いいたします。"
+    "feedbackPreamble": "東京都「デジタルツイン実現プロジェクト」へのご意見・ご要望をお待ちしております。<br> → <a target=\"_blank\" href=\"https://docs.google.com/forms/d/e/1FAIpQLSfjiMijo4bitkzUL2dST5DckYQsWo5NFEF_lDKUxshJiKkvPQ/viewform\">ご意見・ご要望フォーム</a>"
   },
   "languagePanel": {
     "changeLanguage": "言語を変更"
