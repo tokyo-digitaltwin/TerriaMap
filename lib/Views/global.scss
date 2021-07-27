@@ -152,4 +152,7 @@ body {
         color:$color-secondary;
     }
     */
+  .tjs-standard-user-interface__ui {
+    background: linear-gradient(rgb(0, 136, 136), $color-primary) !important;
+  }
 }

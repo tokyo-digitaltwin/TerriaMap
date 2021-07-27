@@ -32,12 +32,13 @@ import "./global.scss";
 export default function UserInterface(props) {
   return (
     <StandardUserInterface {...props} version={version}>
-      <MenuLeft>
-        <MenuItem caption="About" href="about.html" key="about-link" />
-        <RelatedMaps viewState={props.viewState} />
-      </MenuLeft>
+      <MenuLeft></MenuLeft>
       <Nav>
-        <MeasureTool terria={props.viewState.terria} key="measure-tool" />
+        <MeasureTool
+          terria={props.viewState.terria}
+          viewState={props.viewState}
+          key="measure-tool"
+        />
       </Nav>
       <ExperimentalMenu>
         {/* <If condition={isBrowserSupportedAV()}>

@@ -26,6 +26,10 @@ $color-primary-dark:darken($color-primary,10%);
 $dark-darker: hsl(0,30%,15%);
 */
 
+$color-primary: rgb(9, 49, 93);
+$dark: $color-primary;
+$dark-lighter: mix($dark, #fff, $weight: 80%);
+$dark-with-overlay: $dark-lighter;
 $focus-border-light-color: $text-light;
 $focus-border-dark-color: $text-dark;
 $focus-border-width: 2px;
