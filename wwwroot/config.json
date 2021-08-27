@@ -370,13 +370,13 @@
     //   }
     // ]
     "bingMapsKey": "AuhGFviQx4QvSSYN0j2zPDYo9tg_6n4ZER-hOz_Wa9D1nhWS3N_1eUsb1zcZ_apI",
-    "storyEnabled": true,
+    "storyEnabled": false,
     "theme": {
       "logoPaddingVertical": 0,
       "logoPaddingHorizontal": 0,
       "logoHeight": "72px"
     },
-    "disableSplitter": false,
+    "disableSplitter": true,
     "policyUrl": "https://info.tokyo-digitaltwin.metro.tokyo.lg.jp/sitepolicy/"
   }
 }
