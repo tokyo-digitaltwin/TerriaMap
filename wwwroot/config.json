@@ -45,10 +45,10 @@
 
     // See comments in lib/Views/global.scss for further information about customising colors, logos, fonts etc.
     "brandBarElements": [
-      "<a target=\"_blank\" href=\"https://tokyo-digitaltwin.metro.tokyo.lg.jp/\" style=\"background: #fff; width: 100%;\" rel=\"noopener\"><img src=\"images/tokyo_metro_logo.png\" style=\"width: 280px;\" title=\"東京都デジタルツイン3Dビューア (β版)\" /></a>"
+      "<a target=\"_blank\" href=\"https://info.tokyo-digitaltwin.metro.tokyo.lg.jp/\" style=\"background: #fff; width: 100%;\" rel=\"noopener\"><img src=\"images/tokyo_metro_logo.png\" style=\"width: 280px;\" title=\"東京都デジタルツイン3Dビューア (β版)\" /></a>"
     ],
     "brandBarSmallElements": [
-      "<a target=\"_blank\" href=\"https://tokyo-digitaltwin.metro.tokyo.lg.jp/\" style=\"display: flex;\" rel=\"noopener\"><img src=\"images/tokyo_metro_logo_small.png\" style=\"min-width: 60px; max-width: 120px; width: calc(100vw - 260px);\"title=\"東京都デジタルツイン3Dビューア (β版)\" /></a>"
+      "<a target=\"_blank\" href=\"https://info.tokyo-digitaltwin.metro.tokyo.lg.jp/\" style=\"display: flex;\" rel=\"noopener\"><img src=\"images/tokyo_metro_logo_small.png\" style=\"min-width: 60px; max-width: 120px; width: calc(100vw - 260px);\"title=\"東京都デジタルツイン3Dビューア (β版)\" /></a>"
     ],
     // Shown when things go wrong.
     "supportEmail": "",
@@ -370,12 +370,13 @@
     //   }
     // ]
     "bingMapsKey": "",
-    "storyEnabled": false,
+    "storyEnabled": true,
     "theme": {
       "logoPaddingVertical": 0,
       "logoPaddingHorizontal": 0,
       "logoHeight": "72px"
     },
-    "disableSplitter": true
+    "disableSplitter": true,
+    "policyUrl": "https://info.tokyo-digitaltwin.metro.tokyo.lg.jp/sitepolicy/"
   }
 }

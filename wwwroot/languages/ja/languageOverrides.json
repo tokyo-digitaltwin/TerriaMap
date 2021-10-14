@@ -67,7 +67,7 @@
       "content": "## 地図の向きや角度の操作\n\n外側の円を左クリックしながら回すことで地図の向きを変えたり、内側の円を左クリックしながら動かすことで、角度を変えることができます。詳しくは？ボタンをクリックしてください。"
     },
     "menuBarStoryButton": {
-      "content": "## ストーリー\n\nストーリーを使用すると、データセットにコンテキスト情報を追加して、3Dのガイドマップやレポートが作れます。ストーリーエディタを使用して独自のデータストーリーを作成し、完了したら「共有」パネルで共有します。"
+      "content": "## ストーリー\n\nストーリーを使用すると、3Dビューアに表示されるデータに説明を追加したり、動きのあるガイドマップやレポートが作れます。作成したストーリーを共有することもできます。"
     },
     "menuBarMapSettingsButton": {
       "content": "## 地図の設定\n\nベースとなる地図、2D/3D地形、画質などのオプションを設定できます。"
@@ -95,7 +95,7 @@
   },
   "AR": {
     "arTool": "拡張現実ツール",
-    "resetAlignmentMessage": "コンパスの位置合わせをリセットします。配置が実際<と一致しない場合は、デバイスを8の字の動きで振って、デバイスを再調整してみてください。これはいつでも行うことができます。<br /> <br />デバイスに搭載されたコンパスの方向を変える可能性があるため、磁場や金属体のある場所は避けてください。",
+    "resetAlignmentMessage": "コンパスの位置合わせをリセットします。配置が実際<と一致しない場合は、デバイスを8の字の動きで振って、デバイスを再調整してみてください。この作業はいつでも行うことができます。<br /><br />デバイスに搭載されたコンパスの方向を変える可能性があるため、磁場や金属体のある場所は避けてください。",
     "resetAlignmentTitle": "位置合わせをリセット",
     "manualAlignmentMessage": "地図の現在の位置とモバイルデバイスの位置合わせしてから、点滅しているコンパスをクリックします。位置合わせするランドマークが現在地図上に表示されていない場合は、デバイスの位置合わせする前に、識別可能なランドマークが表示されるまでドラッグアンドピンチで地図を移動できます。 <br /><div>{{img}}</div> <br />ヒント：よく知らない場所では、太陽や月が位置合わせのランドマークになることがよくあります（太陽を見て目を傷つけないよう十分注意してください）。",
     "manualAlignmentTitle": "手動調整",
@@ -119,7 +119,7 @@
       "innerCircleTitle": "内側の円",
       "outerRingDescription": "外側のリングをドラッグして回すと地図が回転します。",
       "outerRingTitle": "外側のリング",
-      "title": "ジャイロスコープコントロール"
+      "title": "ジャイロスコープ制御"
     }
   },
   "splitterTool": {
@@ -357,7 +357,7 @@
     "downloadInFormat": "選択中のデータを{{format}}フォーマットでダウンロード",
     "useLinkBelow": "データをダウンロードするには以下のリンクを使用してください。URLのクエリーパラメーターをカスタマイズする方法の詳細は{{link}}から確認してください。",
     "metadataUrls": "メタデータのリンク",
-    "dataUrl": "データのURL",
+    "dataUrl": "データリンク",
     "typeName": "タイプ名",
     "layerName": "レイヤー名",
     "wfs": "これは<1>WFSサービス</1>です。WFSサービスは空間データをオンデマンドで配信します。GISソフトからは次のURLで利用できます。",
@@ -390,7 +390,9 @@
     "created": "作成日",
     "contact": "連絡先",
     "author": "作成者",
-    "fees": "料金"
+    "fees": "料金",
+    "previewItemErrorTitle": "カタログアイテムをプレビューできません。",
+    "previewItemErrorMessage": "カタログアイテム読込中にエラー発生。"
   },
   "search": {
     "searchCatalogue": "カタログを検索する",
@@ -409,7 +411,9 @@
     "helpBtnText": "ヘルプを見る",
     "tourBtnText": "操作方法を見る",
     "welcomeMessage": "防災やまちづくりなど様々な分野のデータを、3D地図上に重ねてみることができます。(データは随時追加予定です)",
-    "title": "3Dビューアで東京を見てみよう！"
+    "title": "3Dビューアで東京を見てみよう！",
+    "welcomeMessageOnMobile": "データがお好きですか？",
+    "searchBtnText": "場所の検索"
   },
   "featureInfo": {
     "noInfoAvailable": "情報はありません",
@@ -493,7 +497,8 @@
     "timeline": {
       "alwaysShow": "常に表示",
       "hideLabel": "ここを押すとワークベンチに時系列データがない時も含めて常にタイムラインが表示されます",
-      "alwaysShowLabel": "ここを押すとワークベンチに時系列データがある時にだけタイムラインが表示されます"
+      "alwaysShowLabel": "ここを押すとワークベンチに時系列データがある時にだけタイムラインが表示されます",
+      "title": "タイムライン"
     },
     "btnText": "地図の設定",
     "screen": "スクリーン",
@@ -628,7 +633,7 @@
   "mobile": {
     "toggleNavigation": "メニューの表示・非表示",
     "addDataBtnText": "データ",
-    "doneBtnText": "閉じる"
+    "doneBtnText": "完了"
   },
   "core": {
     "printWindow": {
@@ -673,7 +678,8 @@
     "terriaError": {
       "defaultCombineMessage": "エラーの詳細は以下に示しました",
       "defaultCombineTitle": "複数のエラーが発生しました",
-      "defaultTitle": "エラーが発生しました"
+      "defaultTitle": "エラーが発生しました",
+      "defaultMessage": "不明なエラー"
     },
     "serverConfig": {
       "failedToGet": "{{serverConfigUrl}} からサーバーの設定を取得できません。そのため、プロキシ、変換、URL短縮機能などが正しく機能しないかもしれません。"
@@ -730,7 +736,9 @@
     "download": "ダウンロード",
     "expand": "もっと見る",
     "closePanel": "パネルを閉じる",
-    "sectionLabel": "図"
+    "sectionLabel": "図",
+    "loading": "チャートデータの読み込み...",
+    "noData": "チャート化できるデータがありません。"
   },
   "emptyWorkbenchMessage": "<0><0>「データを地図上でみる」ボタンから、表示するデータを追加できます。</0><1><strong>上の「$t(addData.addDataBtnText)」をクリック</strong>して</1><2><0>データカタログが開き、</0><1>自分のデータを地図上に展開できます</1></2><3><0></0><strong>使い方：</strong><2>アクティブなデータセットはすべてここに表示されます</2></3></0>",
   "concept": {
@@ -1056,7 +1064,7 @@
       "notCompatibleTitle": "互換性のあるディストリビューションが見つかりません",
       "retrieveErrorMessage": "ディストリビューションまたはデータセットIDがありません",
       "retrieveErrorTitle": "MAGDA レコードを取得時にエラー",
-      "idsNotSpecifiedMessage": "MagdaCatalogItem は recordId を指定する必要があります。",
+      "idsNotSpecifiedMessage": "MagdaReference は recordId を指定する必要があります。",
       "idsNotSpecifiedTitle": "recordId を指定する必要があります",
       "distributionDesc": "ディストリビューションの説明",
       "name": "MAGDAディストリビューション"
@@ -1102,7 +1110,7 @@
       "name": "GeoJSON",
       "couldNotLoadMessage": "与えられたリンクからJSONデータを読み込むことができませんでした。<p>このリンクを手で打ち込んだ場合は、リンクが正しいか確かめてください。</p><p>このエラーが発生する場合、サーバーが{{cors}}をサポートしていない可能性もあります。サーバーを管理しているのがあなたであれば、CORSが無効になっていないか確認し、無効になっている場合は有効にしてください。サーバーのコントロール権がない場合は、サーバー管理者に問い合わせてCORSを有効化してもらってください。または、{{appName}}の運営者に{{email}}から問い合わせいただければ、{{appName}}内のCORS非対応サーバーのリストにこのサーバーを加えることで{{appName}}自体がリクエストを中継できるかもしれません。 <p>このリンクを手で打ち込んだのではない場合は、追加しようとしているデータが一時的に利用できない状態になっているか、インターネット接続に問題がある可能性があります。もう一度データソースを追加してみて、それでも問題が解決しない場合は{{email}}までご連絡ください。</p>",
       "unsupportedBrowserMessage": "お使いのウェブブラウザは{{appName}}がファイルからデータを読み込む上で必要となるFile APIをサポートしていません。ブラウザをアップグレードしてください。最適な体験のためには、{{chrome}}、{{firefox}}または{{internetExplorer}}の最新版をお使いになることをおすすめします。",
-      "errorLoadingMessage": "GeoJSONファイルの読み込み中にエラーが発生しました。このファイルは無効または{{appName}}でサポートされていない可能性があります。サポートや詳しい情報が必要な場合は{{email}}にご連絡ください。",
+      "errorLoadingMessage": "GeoJSONファイルの読み込み中にエラーが発生しました。このファイル形式は無効またはサポートされていない可能性があります。",
       "errorParsingMessage": "与えられたデータをJSONとしてパーズできませんでした。このファイルは無効またはサポートされていない可能性があります。"
     },
     "arcGisFeatureServer": {
@@ -1472,22 +1480,29 @@
       "proxyableDomainsDeprecation": "`proxyableDomainsUrl` は v8 ではサポートしていません",
       "loadConfigErrorTitle": "Terria Map config の読み込みに失敗"
     },
-    "shadow": {
-      "name": "影",
-      "options": {
-        "none": "なし",
-        "cast": "投影のみ",
-        "receive": "受光のみ",
-        "both": "投影と受光"
-      }
-    },
     "commonModelErrors": {
-      "datasetScaleErrorMessage": "データセット {{name}} はあまりズームすると表示されないようにデータ提供者が設定しています。データセットの情報ボタンをクリックしてよし詳細な情報を参照してください。",
+      "datasetScaleErrorMessage": "データセット {{name}} はあまりズームすると表示されないようにデータ提供者が設定しています。データセットの情報ボタンをクリックしてより詳細な情報を参照してください。",
       "datasetScaleErrorTitle": "このスケールではデータセットは表示されません",
       "3dTypeIn2dMode": "**備考:** このデータセットは2Dビュワーでは表示できません。3D地図モードで表示してください。"
     },
     "openDataSoft": {
       "viewDatasetPage": "データセットのページを見る"
+    },
+    "shadow": {
+      "options": {
+        "receive": "受光のみ",
+        "none": "なし",
+        "cast": "投影のみ",
+        "both": "投影と受光"
+      },
+      "name": "影"
+    },
+    "scaleDatasetNotVisible": {
+      "scaleZoomOut": "このスケールではデータセットは見えません。ズームアウトしてください",
+      "scaleZoomIn": "このスケールではデータセットは見えません。ズームしてください"
+    },
+    "terria-reference": {
+      "failedToLoadTarget": "外部カタログからの読み込み失敗"
     }
   },
   "map": {
@@ -1618,5 +1633,9 @@
     "pickLocation": "利用できる画像データを見るには、反対側の地図の対象とする場所を選択してください。",
     "description": "このツールは、異なる2時点の画像データを視覚化します。",
     "titlePrefix": "変異検知"
+  },
+  "mapNavigation": {
+    "additionalTools": "追加のツール",
+    "additionalToolsTitle": "追加ツールを開く"
   }
 }
