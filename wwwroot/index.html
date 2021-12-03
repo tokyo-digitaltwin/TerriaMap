@@ -43,6 +43,22 @@
 </head>
 
 <body>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-196433925-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+gtag('config', 'UA-196433925-1');
+gtag('config', 'G-R074JDNDN9');
+gtag('config', 'UA-196433925-3', {
+'linker': {
+'accept_incoming': true,
+'domains': ['3dview.tokyo-digitaltwin.metro.tokyo.lg.jp', 'info.tokyo-digitaltwin.metro.tokyo.lg.jp']
+}
+});
+</script>
 
 <div id='ui'></div>
   <script src="build/TerriaMap.js"></script>
