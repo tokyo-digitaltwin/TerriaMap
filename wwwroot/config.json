@@ -376,7 +376,7 @@
       "logoPaddingHorizontal": 0,
       "logoHeight": "72px"
     },
-    "disableSplitter": false,
+    "disableSplitter": true,
     "policyUrl": "https://info.tokyo-digitaltwin.metro.tokyo.lg.jp/sitepolicy/"
   }
 }
