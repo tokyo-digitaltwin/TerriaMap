@@ -70,7 +70,10 @@
     "WebServerPort": {
       "Default": "80",
       "Type": "Number"
-    }
+    },
+    "SubDomain": {
+      "Type": "String"
+    }    
   },
   "Resources": {
     "AutoScalingGroup": {
