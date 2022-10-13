@@ -1,6 +1,8 @@
 {
   /* Names of init files (in wwwroot/init), without the .json extension, to load by default */
-  "initializationUrls": ["https://tokyo-digitaltwin.s3.ap-northeast-1.amazonaws.com/catalog/staging.json"],
+  "initializationUrls": [
+    "https://tokyo-digitaltwin.s3.ap-northeast-1.amazonaws.com/catalog/staging20221013.json"
+  ],
   "parameters": {
     "googleUrlShortenerKey": null,
     "googleAnalyticsKey": "G-9C6KLZ56BZ",
