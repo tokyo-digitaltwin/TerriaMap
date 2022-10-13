@@ -379,6 +379,12 @@
       "logoHeight": "88px"
     },
     "disableSplitter": true,
-    "policyUrl": "https://info.tokyo-digitaltwin.metro.tokyo.lg.jp/sitepolicy/"
+
+    "extraCreditLinks": [
+      {
+        "text": "map.extraCreditLinks.policy",
+        "url": "https://info.tokyo-digitaltwin.metro.tokyo.lg.jp/sitepolicy/"
+      }
+    ]
   }
 }
