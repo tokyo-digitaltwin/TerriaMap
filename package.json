@@ -30,16 +30,16 @@
     "terriajs-server": "^3.3.4"
   },
   "config": {
-    "packageName": "3dview-staging",
-    "stackName": "threedview-staging",
-    "awsProfile": "tokyo_dt",
-    "awsS3PackagesPath": "s3://tokyo-digitaltwin-terria-apps/map_digitaltwin",
+    "packageName": "dfltsample",
+    "stackName": "dfltsample",
+    "awsProfile": "terria",
+    "awsS3PackagesPath": "s3://pss-terria-apps/map_mri_digitaltwin",
     "awsRegion": "ap-northeast-1",
     "awsEc2InstanceType": "t3.small",
     "awsEc2ImageId": "ami-0b5a5c971fc30e5d1",
-    "awsKeyName": "viewer-tokyo-dt",
-    "awsS3ServerConfigOverridePath": "s3://tokyo-digitaltwin-terria-apps/map_digitaltwin/privateserverconfig-2016-08-31.json",
-    "awsS3ClientConfigOverridePath": "s3://tokyo-digitaltwin-terria-apps/map_digitaltwin/privateclientconfig-2018-11-19.json",
+    "awsKeyName": "3dimension_jp",
+    "awsS3ServerConfigOverridePath": "s3://pss-terria-apps/map_mri_digitaltwin/privateserverconfig-2016-08-31.json",
+    "awsS3ClientConfigOverridePath": "s3://pss-terria-apps/map_mri_digitaltwin/privateclientconfig-2018-11-19.json",
     "docker": {
       "name": "data61/terria-terriamap",
       "include": "wwwroot node_modules devserverconfig.json index.js package.json version.js"
