@@ -65,7 +65,7 @@
       "Type": "Number"
     },
     "UserDataBase64": {
-        "Type": "String"
+      "Type": "String"
     },
     "WebServerPort": {
       "Default": "80",
@@ -73,7 +73,7 @@
     },
     "SubDomain": {
       "Type": "String"
-    }    
+    }
   },
   "Resources": {
     "AutoScalingGroup": {
@@ -117,13 +117,9 @@
         "AutoScalingRollingUpdate": {
           "MaxBatchSize": "1",
           "MinInstancesInService": {
-            "Fn::If": [
-              "UseSpotInstances",
-              0,
-              1
-            ]
+            "Fn::If": ["UseSpotInstances", 0, 1]
           },
-          "PauseTime": "PT0M5S"
+          "PauseTime": "PT7M"
         }
       }
     },
@@ -202,9 +198,6 @@
             "VirtualName": "ephemeral3"
           }
         ],
-        "IamInstanceProfile": {
-          "Ref": "S3InstanceProfile"
-        },
         "ImageId": {
           "Ref": "ImageId"
         },
@@ -232,7 +225,7 @@
           ]
         },
         "UserData": {
-            "Ref": "UserDataBase64"
+          "Ref": "UserDataBase64"
         }
       },
       "Type": "AWS::AutoScaling::LaunchConfiguration"
@@ -246,10 +239,7 @@
           {
             "AliasTarget": {
               "DNSName": {
-                "Fn::GetAtt": [
-                  "ElasticLoadBalancer",
-                  "CanonicalHostedZoneName"
-                ]
+                "Fn::GetAtt": ["ElasticLoadBalancer", "CanonicalHostedZoneName"]
               },
               "HostedZoneId": {
                 "Fn::GetAtt": [
@@ -276,66 +266,6 @@
         ]
       },
       "Type": "AWS::Route53::RecordSetGroup"
-    },
-    "S3InstanceProfile": {
-      "Properties": {
-        "Path": "/",
-        "Roles": [
-          {
-            "Ref": "S3Role"
-          }
-        ]
-      },
-      "Type": "AWS::IAM::InstanceProfile"
-    },
-    "S3Role": {
-      "Properties": {
-        "AssumeRolePolicyDocument": {
-          "Statement": [
-            {
-              "Action": [
-                "sts:AssumeRole"
-              ],
-              "Effect": "Allow",
-              "Principal": {
-                "Service": [
-                  "ec2.amazonaws.com"
-                ]
-              }
-            }
-          ]
-        },
-        "Path": "/",
-        "Policies": [
-          {
-            "PolicyDocument": {
-              "Statement": [
-                {
-                  "Action": [
-                    "s3:Get*",
-                    "s3:List*"
-                  ],
-                  "Effect": "Allow",
-                  "Resource": "*"
-                },
-                {
-                  "Action": [
-                    "s3:GetObject",
-                    "s3:PutObject"
-                  ],
-                  "Effect": "Allow",
-                  "Resource": [
-                    "arn:aws:s3:::pss-terriamap-sharing",
-                    "arn:aws:s3:::pss-terriamap-sharing/*"
-                  ]
-                }
-              ]
-            },
-            "PolicyName": "S3Read"
-          }
-        ]
-      },
-      "Type": "AWS::IAM::Role"
     },
     "SecurityGroup": {
       "Properties": {
