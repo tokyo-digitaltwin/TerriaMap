@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" class="terria">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website# ">
+    <base href="<%= baseHref %>">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">  <!-- Use Chrome Frame in IE -->
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="description" content="建物や街の様子を再現した3D都市モデルに、様々なデータを重ね合わせることができるWEBアプリケーションです。これまでと違う角度から東京をみることができます。">
+    <meta name="copyright" content="Copyright(c) 2012-2016 National ICT Australia Limited (NICTA), CSIRO Data61.  All rights reserved.">
+    <meta name="keywords" content="東京都,デジタルツイン,3Dビューア,オープンソース,OSS,3D,3Dモデル,都市モデル,スマートシティ">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="X-FRAME-OPTIONS" content="DENY">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="manifest" href="favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#282D32">
+    <meta name="msapplication-TileImage" content="favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#282D32">
+    <meta name="twitter:image" content="https://3dview.tokyo-digitaltwin.metro.tokyo.lg.jp/images/3dviewer.png" />
+    <meta name="twitter:card" content="summary_large_image"/>
+
+    <meta property="og:url" content=" https://3dview.tokyo-digitaltwin.metro.tokyo.lg.jp "　/>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="3Dビューアで東京を見てみよう！東京都デジタルツイン3Dビューア" />
+    <meta property="og:description" content="建物や街の様子を再現した3D都市モデルに様々なデータを重ね合わせることができるWEBアプリケーションです。これまでと違う角度から東京をみることができます。" />
+    <meta property="og:site_name" content="東京都デジタルツイン3Dビューア（β版）" />
+    <meta property="og:image" content="https://3dview.tokyo-digitaltwin.metro.tokyo.lg.jp/images/3dviewer.png" />
+
+    <title>東京都デジタルツイン3Dビューア (β版)</title>
+
+    <!-- Leaflet -->
+    <script>L_PREFER_CANVAS = true;</script>
+</head>
+
+<body>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-196433925-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtagcd(){dataLayer.push(arguments);}
+  gtagcd('js', new Date());
+
+  gtagcd('config', 'UA-196433925-1');
+  gtagcd('config', 'G-R074JDNDN9');
+  gtagcd('config', 'UA-196433925-3', {
+'linker': {
+'accept_incoming': true,
+'domains': ['3dview.tokyo-digitaltwin.metro.tokyo.lg.jp', 'info.tokyo-digitaltwin.metro.tokyo.lg.jp']
+}
+});
+</script>
+
+
+<div id='ui'></div>
+  <script src="build/TerriaMap.js"></script>
+</body>
+</html>

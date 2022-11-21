@@ -1,5 +1,4 @@
-Terria Map
-==========
+# Terria Map
 
 <img src="hello_logo.png" alt="drawing" width="300"/>
 
@@ -8,11 +7,10 @@ Terria Map
 <br>
 <br>
 
-
 ### 東京都デジタルツイン実現プロジェクト
-- 専用情報発信サイト<br>
-    https://info.tokyo-digitaltwin.metro.tokyo.lg.jp/
-- 東京都デジタルツイン3Dビューア（β版）<br>
-※ 上記の専用情報発信サイトからリンクされております。<br>
-  https://3dview.tokyo-digitaltwin.metro.tokyo.lg.jp/
 
+- 専用情報発信サイト<br>
+  https://info.tokyo-digitaltwin.metro.tokyo.lg.jp/
+- 東京都デジタルツイン 3D ビューア（β 版）<br>
+  ※ 上記の専用情報発信サイトからリンクされております。<br>
+  https://3dview.tokyo-digitaltwin.metro.tokyo.lg.jp/

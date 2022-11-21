@@ -125,6 +125,10 @@
   },
   "helpPanel": {
     "menuPaneBody": "Find useful tips on how to use TerriaJS by either checking the guides below or by contacting the team at [support-3dview@ml.mri.co.jp](mailto:support-3dview@ml.mri.co.jp)"
+  },
+  "map": {
+    "extraCreditLinks": {
+      "policy": "Site policy"
+    }
   }
-
 }

@@ -32,7 +32,7 @@
   },
   "Parameters": {
     "HostedZoneName": {
-      "Default": "pss-terria.com.",
+      "Default": "tokyo-digitaltwin.metro.tokyo.lg.jp.",
       "Type": "String"
     },
     "ImageId": {
@@ -65,7 +65,7 @@
       "Type": "Number"
     },
     "UserDataBase64": {
-        "Type": "String"
+      "Type": "String"
     },
     "WebServerPort": {
       "Default": "80",
@@ -73,7 +73,7 @@
     },
     "SubDomain": {
       "Type": "String"
-    }    
+    }
   },
   "Resources": {
     "AutoScalingGroup": {
@@ -117,11 +117,7 @@
         "AutoScalingRollingUpdate": {
           "MaxBatchSize": "1",
           "MinInstancesInService": {
-            "Fn::If": [
-              "UseSpotInstances",
-              0,
-              1
-            ]
+            "Fn::If": ["UseSpotInstances", 0, 1]
           },
           "PauseTime": "PT0M5S"
         }
@@ -167,7 +163,7 @@
             "InstancePort": "80",
             "LoadBalancerPort": "443",
             "Protocol": "HTTPS",
-            "SSLCertificateId": "arn:aws:acm:ap-northeast-1:407999471312:certificate/b6b51de1-b35b-4e94-b8d6-5fe360eabdb2"
+            "SSLCertificateId": "arn:aws:acm:ap-northeast-1:365028269323:certificate/74cbc3b3-eb44-4336-8101-f44553b1dd29"
           }
         ]
       },
@@ -232,7 +228,7 @@
           ]
         },
         "UserData": {
-            "Ref": "UserDataBase64"
+          "Ref": "UserDataBase64"
         }
       },
       "Type": "AWS::AutoScaling::LaunchConfiguration"
@@ -246,10 +242,7 @@
           {
             "AliasTarget": {
               "DNSName": {
-                "Fn::GetAtt": [
-                  "ElasticLoadBalancer",
-                  "CanonicalHostedZoneName"
-                ]
+                "Fn::GetAtt": ["ElasticLoadBalancer", "CanonicalHostedZoneName"]
               },
               "HostedZoneId": {
                 "Fn::GetAtt": [
@@ -293,36 +286,29 @@
         "AssumeRolePolicyDocument": {
           "Statement": [
             {
-              "Action": [
-                "sts:AssumeRole"
-              ],
+              "Action": ["sts:AssumeRole"],
               "Effect": "Allow",
               "Principal": {
-                "Service": [
-                  "ec2.amazonaws.com"
-                ]
+                "Service": ["ec2.amazonaws.com"]
               }
             }
           ]
         },
         "Path": "/",
+        "ManagedPolicyArns": [
+          "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+        ],
         "Policies": [
           {
             "PolicyDocument": {
               "Statement": [
                 {
-                  "Action": [
-                    "s3:Get*",
-                    "s3:List*"
-                  ],
+                  "Action": ["s3:Get*", "s3:List*"],
                   "Effect": "Allow",
                   "Resource": "*"
                 },
                 {
-                  "Action": [
-                    "s3:GetObject",
-                    "s3:PutObject"
-                  ],
+                  "Action": ["s3:GetObject", "s3:PutObject"],
                   "Effect": "Allow",
                   "Resource": [
                     "arn:aws:s3:::pss-terriamap-sharing",

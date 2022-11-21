@@ -1,55 +1,53 @@
 {
-    "port": 3001,
+  "port": 3001,
+  "allowProxyFor": [
+    "nicta.com.au",
+    "gov.au",
+    "csiro.au",
+    "arcgis.com",
+    "argo.jcommops.org",
+    "www.abc.net.au",
+    "geoserver.aurin.org.au",
+    "mapsengine.google.com",
+    "s3-ap-southeast-2.amazonaws.com",
+    "adelaidecitycouncil.com",
+    "www.dptiapps.com.au",
+    "geoserver-123.aodn.org.au",
+    "geoserver.imos.org.au",
+    "nci.org.au",
+    "static.nationalmap.nicta.com.au",
+    "githubusercontent.com",
+    "gov",
+    "gov.uk",
+    "gov.nz",
+    "sample.aero3dpro.com.au",
+    "services.aremi.data61.io",
+    "services.aremi.data61.io",
+    "3.113.247.170",
+    "tokyo-digitaltwin.s3.ap-northeast-1.amazonaws.com"
+  ],
+  "shareUrlPrefixes": {
+    "s": {
+      "service": "s3",
+      // Required: the AWS region to access
+      "region": "ap-northeast-1",
 
-    "allowProxyFor" : [
-        "nicta.com.au",
-        "gov.au",
-        "csiro.au",
-        "arcgis.com",
-        "argo.jcommops.org",
-        "www.abc.net.au",
-        "geoserver.aurin.org.au",
-        "mapsengine.google.com",
-        "s3-ap-southeast-2.amazonaws.com",
-        "adelaidecitycouncil.com",
-        "www.dptiapps.com.au",
-        "geoserver-123.aodn.org.au",
-        "geoserver.imos.org.au",
-        "nci.org.au",
-        "static.nationalmap.nicta.com.au",
-        "githubusercontent.com",
-        "gov",
-        "gov.uk",
-        "gov.nz",
-        "sample.aero3dpro.com.au",
-        "services.aremi.data61.io",
-        "services.aremi.data61.io",
-        "3.113.247.170",
-        "tokyo-digitaltwin.s3.ap-northeast-1.amazonaws.com"
-    ],
-    "shareUrlPrefixes": {
-        "s": {
-            "service": "s3",
-            // Required: the AWS region to access
-            "region": "ap-northeast-1",
+      // Required: an existing S3 bucket in which to store objects
+      "bucket": "pss-terria-sharedata",
 
-            // Required: an existing S3 bucket in which to store objects
-            "bucket": "pss-terria-sharedata",
+      // Optional: The access key ID and secret access key of a user with S3 getObject and putObject permission on the above bucket
+      // If not provided here, you must ensure they're available as environment variables or in a shared credentials file.
+      // See http://docs.aws.amazon.com/AWSJavaScriptSDK/guide/node-configuring.html
+      "accessKeyId": "AKIAV57VJ33ILZAV7NVC",
+      "secretAccessKey": "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",
 
-            // Optional: The access key ID and secret access key of a user with S3 getObject and putObject permission on the above bucket
-            // If not provided here, you must ensure they're available as environment variables or in a shared credentials file.
-            // See http://docs.aws.amazon.com/AWSJavaScriptSDK/guide/node-configuring.html
-            "accessKeyId": "AKIAV57VJ33ILZAV7NVC",
-            "secretAccessKey": "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",
-
-            // Optional: The length of the random share key to generate (not including prefix), up to 54 characters. Defaults to the full length.
-            "keyLength": 16
-        }
-    },
-    "newShareUrlPrefix": "s",    
-    "basicAuthentication": {
-        "username": "td_test",
-        "password": "b44k31o16BS"
+      // Optional: The length of the random share key to generate (not including prefix), up to 54 characters. Defaults to the full length.
+      "keyLength": 16
     }
+  },
+  "newShareUrlPrefix": "s",
+  "basicAuthentication": {
+    "username": "td_test",
+    "password": "b44k31o16BS"
+  }
 }
-
