@@ -1,17 +1,13 @@
-import {
-  MenuLeft,
-  Nav,
-  ExperimentalMenu
-} from "terriajs/lib/ReactViews/StandardUserInterface/customizable/Groups";
-import MeasureTool from "terriajs/lib/ReactViews/Map/Navigation/MeasureTool";
-import MenuItem from "terriajs/lib/ReactViews/StandardUserInterface/customizable/MenuItem";
 import PropTypes from "prop-types";
 import React from "react";
-import RelatedMaps from "./RelatedMaps";
-import SplitPoint from "terriajs/lib/ReactViews/SplitPoint";
-import StandardUserInterface from "terriajs/lib/ReactViews/StandardUserInterface/StandardUserInterface.jsx";
+import RelatedMaps from "terriajs/lib/ReactViews/RelatedMaps/RelatedMaps";
+import {
+  ExperimentalMenu,
+  MenuLeft
+} from "terriajs/lib/ReactViews/StandardUserInterface/customizable/Groups";
+import MenuItem from "terriajs/lib/ReactViews/StandardUserInterface/customizable/MenuItem";
+import StandardUserInterface from "terriajs/lib/ReactViews/StandardUserInterface/StandardUserInterface";
 import version from "../../version";
-
 import "./global.scss";
 
 // function loadAugmentedVirtuality(callback) {
@@ -30,16 +26,11 @@ import "./global.scss";
 // }
 
 export default function UserInterface(props) {
+  const relatedMaps = props.viewState.terria.configParameters.relatedMaps;
+
   return (
     <StandardUserInterface {...props} version={version}>
       <MenuLeft></MenuLeft>
-      <Nav>
-        <MeasureTool
-          terria={props.viewState.terria}
-          viewState={props.viewState}
-          key="measure-tool"
-        />
-      </Nav>
       <ExperimentalMenu>
         {/* <If condition={isBrowserSupportedAV()}>
           <SplitPoint
