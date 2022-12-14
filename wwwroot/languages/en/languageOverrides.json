@@ -128,7 +128,8 @@
   },
   "map": {
     "extraCreditLinks": {
-      "policy": "Site policy"
+      "policy": "Site policy",
+      "policyUrl": "https://info.tokyo-digitaltwin.metro.tokyo.lg.jp/sitepolicy/"
     }
   }
 }
