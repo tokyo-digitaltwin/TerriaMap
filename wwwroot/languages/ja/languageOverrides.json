@@ -50,7 +50,8 @@
   },
   "welcomeMessage": {
     "welcomeMessage": "防災やまちづくりなど様々な分野のデータを、3D地図上に重ねてみることができます。(データは随時追加予定です)",
-    "title": "3Dビューアで東京を見てみよう！"
+    "title": "3Dビューアで東京を見てみよう！",
+    "policyUrl": "https://info.tokyo-digitaltwin.metro.tokyo.lg.jp/sitepolicy/"
   },
   "helpPanel": {
     "promptMessage": "操作方法はこちらからご確認ください",
@@ -61,8 +62,7 @@
   },
   "map": {
     "extraCreditLinks": {
-      "policy": "サイトポリシー",
-      "policyUrl": "https://info.tokyo-digitaltwin.metro.tokyo.lg.jp/sitepolicy/"
+      "policy": "サイトポリシー"
     }
   }
 }

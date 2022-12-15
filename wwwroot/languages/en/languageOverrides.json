@@ -123,13 +123,15 @@
   "feedback": {
     "feedbackPreamble": "Please fill in the form <a target=\"_blank\" href=\"https://docs.google.com/forms/d/e/1FAIpQLSfjiMijo4bitkzUL2dST5DckYQsWo5NFEF_lDKUxshJiKkvPQ/viewform\">HERE</a>."
   },
+  "welcomeMessage": {
+    "policyUrl": "https://info.tokyo-digitaltwin.metro.tokyo.lg.jp/sitepolicy/"
+  },
   "helpPanel": {
     "menuPaneBody": "Find useful tips on how to use TerriaJS by either checking the guides below or by contacting the team at [support-3dview@ml.mri.co.jp](mailto:support-3dview@ml.mri.co.jp)"
   },
   "map": {
     "extraCreditLinks": {
-      "policy": "Site policy",
-      "policyUrl": "https://info.tokyo-digitaltwin.metro.tokyo.lg.jp/sitepolicy/"
+      "policy": "Site policy"
     }
   }
 }

@@ -383,7 +383,7 @@
     "extraCreditLinks": [
       {
         "text": "map.extraCreditLinks.policy",
-        "url": "map.extraCreditLinks.policyUrl"
+        "url": "https://info.tokyo-digitaltwin.metro.tokyo.lg.jp/sitepolicy/"
       }
     ]
   }
