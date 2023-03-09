@@ -95,8 +95,7 @@ module.exports = terria
           terria: terria,
           key: terria.configParameters.bingMapsKey,
           culture: "ja",
-          primaryCountry: "日本",
-          searchTextPrefix: "東京 "
+          primaryCountry: "日本"
         })
         // new GazetteerSearchProviderViewModel({terria}),
         // new GnafSearchProviderViewModel({terria})
