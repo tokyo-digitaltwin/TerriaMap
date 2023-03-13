@@ -24,7 +24,9 @@
     "services.aremi.data61.io",
     "services.aremi.data61.io",
     "3.113.247.170",
-    "tokyo-digitaltwin.s3.ap-northeast-1.amazonaws.com"
+    "tokyo-digitaltwin.s3.ap-northeast-1.amazonaws.com",
+    "d21pj9gigeop84.cloudfront.net",
+    "shizuoka3d.s3.ap-northeast-1.amazonaws.com"
   ],
   "shareUrlPrefixes": {
     "s": {
