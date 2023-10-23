@@ -5,20 +5,12 @@
 "use strict";
 
 /*global require*/
-// Every module required-in here must be a `dependency` in package.json, not just a `devDependency`,
-// This matters if ever we have gulp tasks run from npm, especially post-install ones.
+// If gulp tasks are run in a post-install task modules required here must be be a `dependency`
+//  in package.json, not just a `devDependency`. This is not currently needed.
 var fs = require("fs");
 var gulp = require("gulp");
 var path = require("path");
 var PluginError = require("plugin-error");
-var minimist = require("minimist");
-
-var knownOptions = {
-  string: ["baseHref"],
-  default: { baseHref: "/" }
-};
-
-var options = minimist(process.argv.slice(2), knownOptions);
 
 var watchOptions = {
   interval: 1000
@@ -37,21 +29,52 @@ gulp.task("write-version", function (done) {
   var fs = require("fs");
   var spawnSync = require("child_process").spawnSync;
 
-  // Get a version string from "git describe".
-  var version = spawnSync("git", ["describe"]).stdout.toString().trim();
-  var isClean =
+  const nowDate = new Date();
+  const dateString = `${nowDate.getFullYear()}-${
+    nowDate.getMonth() + 1
+  }-${nowDate.getDate()}`;
+  const packageJson = require("./package.json");
+  const terriajsPackageJson = require("./node_modules/terriajs/package.json");
+
+  const isClean =
     spawnSync("git", ["status", "--porcelain"]).stdout.toString().length === 0;
+
+  const gitHash = spawnSync("git", ["rev-parse", "--short", "HEAD"])
+    .stdout.toString()
+    .replace("\n", "");
+
+  let version = `${dateString}-${packageJson.version}-${terriajsPackageJson.version}-${gitHash}`;
+
   if (!isClean) {
     version += " (plus local modifications)";
   }
 
+  // Write version.js - which will be injected into `{{version}}` in Terria `brandBarElements`
   fs.writeFileSync("version.js", "module.exports = '" + version + "';");
+
+  // Also write out a JSON file with all versions into wwwroot
+  fs.writeFileSync(
+    "wwwroot/version.json",
+    JSON.stringify({
+      date: dateString,
+      terriajs: terriajsPackageJson.version,
+      terriamap: packageJson.version,
+      terriamapCommitHash: gitHash,
+      hasLocalModifications: !isClean
+    })
+  );
 
   done();
 });
 
 gulp.task("render-index", function renderIndex(done) {
   var ejs = require("ejs");
+  var minimist = require("minimist");
+  // Arguments written in skewer-case can cause problems (unsure why), so stick to camelCase
+  var options = minimist(process.argv.slice(2), {
+    string: ["baseHref"],
+    default: { baseHref: "/" }
+  });
 
   var index = fs.readFileSync("wwwroot/index.ejs", "utf8");
   var indexResult = ejs.render(index, { baseHref: options.baseHref });
@@ -157,29 +180,6 @@ gulp.task(
     }
 
     gulp.watch(sourceGlob, watchOptions, gulp.series("copy-terriajs-assets"));
-  })
-);
-
-gulp.task("copy-editor", function () {
-  var glob = path.join(getPackageRoot("terriajs-catalog-editor"), "**");
-
-  return gulp.src(glob).pipe(gulp.dest("./wwwroot/editor"));
-});
-
-// Generate new schema for editor, and copy it over whatever version came with editor.
-gulp.task(
-  "make-editor-schema",
-  gulp.series("copy-editor", function makeEditorSchema() {
-    var generateSchema = require("generate-terriajs-schema");
-    var schemaSourceGlob = require("terriajs/buildprocess/schemaSourceGlob");
-
-    return generateSchema({
-      sourceGlob: schemaSourceGlob,
-      dest: "wwwroot/editor",
-      noversionsubdir: true,
-      editor: true,
-      quiet: true
-    });
   })
 );
 
@@ -339,80 +339,6 @@ function mergeConfigs(original, override) {
   return result;
 }
 
-/*
-    Use EJS to render "datasources/foo.ejs" to "wwwroot/init/foo.json". Include files should be
-    stored in "datasources/includes/blah.ejs". You can refer to an include file as:
-
-    <%- include includes/foo %>
-
-    If you want to pass parameters to the included file, do this instead:
-
-    <%- include('includes/foo', { name: 'Cool layer' } %>
-
-    and in includes/foo:
-
-    "name": "<%= name %>"
- */
-gulp.task("render-datasource-templates", function (done) {
-  var ejs = require("ejs");
-  var JSON5 = require("json5");
-  var templateDir = "datasources";
-
-  try {
-    fs.accessSync(templateDir);
-  } catch (e) {
-    // Datasources directory doesn't exist? No problem.
-    done();
-    return;
-  }
-  fs.readdirSync(templateDir).forEach(function (filename) {
-    if (filename.match(/\.ejs$/)) {
-      var templateFilename = path.join(templateDir, filename);
-      var template = fs.readFileSync(templateFilename, "utf8");
-      var result = ejs.render(template, null, { filename: templateFilename });
-
-      // Remove all new lines. This means you can add newlines to help keep source files manageable, without breaking your JSON.
-      // If you want actual new lines displayed somewhere, you should probably use <br/> if it's HTML, or \n\n if it's Markdown.
-      //result = result.replace(/(?:\r\n|\r|\n)/g, '');
-
-      var outFilename = filename.replace(".ejs", ".json");
-      try {
-        // Replace "2" here with "0" to minify.
-        result = JSON.stringify(JSON5.parse(result), null, 2);
-        console.log("Rendered template " + outFilename);
-      } catch (e) {
-        console.warn(
-          "Warning: Rendered template " + outFilename + " is not valid JSON"
-        );
-      }
-      fs.writeFileSync(
-        path.join("wwwroot/init", outFilename),
-        new Buffer(result)
-      );
-    }
-  });
-
-  done();
-});
-
-gulp.task(
-  "watch-datasource-templates",
-  gulp.series(
-    "render-datasource-templates",
-    function watchDatasourceTemplates() {
-      gulp.watch(
-        [
-          "lib/Language/**/*.json",
-          "datasources/**/*.ejs",
-          "datasources/*.json"
-        ],
-        watchOptions,
-        gulp.series("render-datasource-templates")
-      );
-    }
-  )
-);
-
 gulp.task("sync-terriajs-dependencies", function (done) {
   var appPackageJson = require("./package.json");
   var terriaPackageJson = require("terriajs/package.json");
@@ -485,29 +411,65 @@ function checkForDuplicateCesium() {
   }
 }
 
+gulp.task("terriajs-server", function (done) {
+  // E.g. gulp terriajs-server --terriajsServerArg port=4000 --terriajsServerArg verbose=true
+  //  or gulp dev --terriajsServerArg port=3000
+  const { spawn } = require("child_process");
+  const minimist = require("minimist");
+  // Arguments written in skewer-case can cause problems (unsure why), so stick to camelCase
+  const options = minimist(process.argv.slice(2), {
+    string: ["terriajsServerArg"],
+    default: { terriajsServerArg: [] }
+  });
+
+  const logFile = fs.openSync("./terriajs-server.log", "a");
+  const serverArgs = Array.isArray(options.terriajsServerArg)
+    ? options.terriajsServerArg
+    : [options.terriajsServerArg];
+  const child = spawn(
+    "node",
+    [
+      "./node_modules/.bin/terriajs-server",
+      ...serverArgs.map((arg) => `--${arg}`)
+    ],
+    { detached: true, stdio: ["ignore", logFile, logFile] }
+  );
+  child.on("exit", (exitCode, signal) => {
+    done(
+      new Error(
+        "terriajs-server quit" +
+          (exitCode !== null ? ` with exit code: ${exitCode}` : "") +
+          (signal ? ` from signal: ${signal}` : "") +
+          "\nCheck terriajs-server.log for more information."
+      )
+    );
+  });
+  // Intercept SIGINT, SIGTERM and SIGHUP, cleanup terriajs-server and re-send signal
+  // May fail to catch some relevant signals on Windows
+  // SIGINT: ctrl+c
+  // SIGTERM: kill <pid>
+  // SIGHUP: terminal closed
+  process.once("SIGINT", () => {
+    child.kill("SIGTERM");
+    process.kill(process.pid, "SIGINT");
+  });
+  process.once("SIGTERM", () => {
+    child.kill("SIGTERM");
+    process.kill(process.pid, "SIGTERM");
+  });
+  process.once("SIGHUP", () => {
+    child.kill("SIGTERM");
+    process.kill(process.pid, "SIGHUP");
+  });
+});
+
+gulp.task("build", gulp.series("copy-terriajs-assets", "build-app"));
+gulp.task("release", gulp.series("copy-terriajs-assets", "release-app"));
+gulp.task("watch", gulp.parallel("watch-terriajs-assets", "watch-app"));
+// Run render-index before starting terriajs-server because terriajs-server won't
+//  start if index.html isn't present
 gulp.task(
-  "build",
-  gulp.series(
-    "render-datasource-templates",
-    "copy-terriajs-assets",
-    "build-app"
-  )
-);
-gulp.task(
-  "release",
-  gulp.series(
-    "render-datasource-templates",
-    "copy-terriajs-assets",
-    "release-app",
-    "make-editor-schema"
-  )
-);
-gulp.task(
-  "watch",
-  gulp.parallel(
-    "watch-datasource-templates",
-    "watch-terriajs-assets",
-    "watch-app"
-  )
+  "dev",
+  gulp.parallel(gulp.series("render-index", "terriajs-server"), "watch")
 );
 gulp.task("default", gulp.series("lint", "build"));

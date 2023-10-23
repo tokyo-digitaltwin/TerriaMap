@@ -1,5 +1,47 @@
 # Change Log
 
+### The Next Release
+
+- [The next improvement]
+
+### `0.0.8`
+
+**2023-08-11**
+
+- Updated TerriaJS to `8.3.2`.
+  - Now supports Google Analytics 4 properties.
+  - Upgraded babel packages
+  - See [the full list of changes](https://github.com/TerriaJS/terriajs/blob/main/CHANGES.md#832---2023-08-11).
+
+### `0.0.7`
+
+**2023-05-22**
+
+- Update TerriaJS to `8.3.0`
+
+  - **Breaking changes:**
+
+    - **Upgraded Mobx to version 6.7.x**
+    - **Upgraded Typescript to version 4.9.x**
+
+- Make `version.js` more detailed. It now uses format `${date}-${TerriaMap version}-${TerriaJS version}-${TerriaMap commit hash}`
+- Also write out new `wwwroot/version.json` file - for example `{"date":"2022-11-11","terriajs":"8.2.21","terriamap":"0.0.6","terriamapCommitHash":"2d4d8d7d","hasLocalModifications":true}`
+
+### `0.0.6`
+
+**2022-11-11**
+
+- About button href is now pulled from TerriaJS `configParameters.aboutButtonHrefUrl`
+- Update TerriaJS to `8.2.21`
+
+### `0.0.5`
+
+**2022-11-02**
+
+- TerriaMap no longer supports ejs templating for data sources. We suggest to use terria reference to manage a catalog in multiple files.
+- Update TerriaJS to `8.2.20`
+- Pin `"@types/lodash": "4.14.182"`(See https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/63021)
+
 ### `0.0.4`
 
 **2022-09-23**
