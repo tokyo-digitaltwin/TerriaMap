@@ -1,8 +1,6 @@
 {
   /* Names of init files (in wwwroot/init), without the .json extension, to load by default */
-  "initializationUrls": [
-    "simple"
-  ],
+  "initializationUrls": ["simple"],
   "parameters": {
     "googleUrlShortenerKey": null,
     "googleAnalyticsKey": "",
@@ -90,6 +88,16 @@
       },
       "fallbackLanguage": "en"
     },
+    "searchBarConfig": {},
+    "searchProviders": [
+      {
+        "id": "search-provider/cesium-ion",
+        "type": "cesium-ion-search-provider",
+        "name": "translate#viewModels.searchLocations",
+        "flightDurationSeconds": 1.5,
+        "minCharacters": 3
+      }
+    ],
     "helpContent": [
       {
         "title": "translate#gettingstarted.title",
