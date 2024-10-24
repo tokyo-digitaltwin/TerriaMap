@@ -91,11 +91,15 @@
     "searchBarConfig": {},
     "searchProviders": [
       {
-        "id": "search-provider/cesium-ion",
-        "type": "cesium-ion-search-provider",
+        "id": "search-provider/bing-maps",
+        "type": "bing-maps-search-provider",
         "name": "translate#viewModels.searchLocations",
+        "url": "https://dev.virtualearth.net/",
         "flightDurationSeconds": 1.5,
-        "minCharacters": 3
+        "minCharacters": 0,
+        "isOpen": true,
+        "culture": "ja",
+        "primaryCountry": "日本"
       }
     ],
     "helpContent": [
