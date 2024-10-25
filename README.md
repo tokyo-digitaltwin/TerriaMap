@@ -9,9 +9,9 @@
 
 ### 東京都デジタルツイン実現プロジェクト
 
-- 専用情報発信サイト<br>
+- 情報発信サイト<br>
   https://info.tokyo-digitaltwin.metro.tokyo.lg.jp/<br><br>
 - 東京都デジタルツイン 3D ビューア（β 版）<br>
-  ※ 上記の専用情報発信サイトからリンクされております。<br>
+  ※ 上記の情報発信サイトからリンクされております。<br>
   https://3dview.tokyo-digitaltwin.metro.tokyo.lg.jp/<br><br>
 - [TerriaJs の公式ドキュメント](https://docs.terria.io/guide/)にはない東京都デジタルツイン 3D ビューア（β 版）独自の設定項目については、[こちら](https://github.com/tokyo-digitaltwin/terriajs/blob/tokyo_digitaltwin/CUSTOM_FEATURES.md)を参照ください。
