@@ -32,9 +32,9 @@ export default class IframeCutromComponent extends CustomComponent {
   }
   processNode(
     context: ProcessNodeContext,
-    node: DomElement,
-    children: ReactElement[],
-    index: number
+    node: DomElement
+    // children: ReactElement[],
+    // index: number
   ): ReactElement | undefined {
     const src = node.attribs?.src;
     if (!isAllowedSrc(src)) {
@@ -48,7 +48,7 @@ export default class IframeCutromComponent extends CustomComponent {
         title={node.attribs?.title}
         frameBorder={node.attribs?.frameborder}
         allow={node.attribs?.allow}
-        allowFullScreen={node.attribs?.allowfullscreen != null}
+        allowFullScreen={node.attribs?.allowfullscreen !== undefined}
       />
     );
   }

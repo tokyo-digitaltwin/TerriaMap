@@ -25,7 +25,9 @@ deploy/work/
 packages/
 pancake/
 yarn-error.log
+.npmrc
 
 package-lock.json
+.nvmrc
 .yarn
 .yarnrc

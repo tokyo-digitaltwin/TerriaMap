@@ -1,8 +1,6 @@
 {
   /* Names of init files (in wwwroot/init), without the .json extension, to load by default */
-  "initializationUrls": [
-    "simple"
-  ],
+  "initializationUrls": ["simple"],
   "parameters": {
     "googleUrlShortenerKey": null,
     "googleAnalyticsKey": "",
@@ -90,6 +88,20 @@
       },
       "fallbackLanguage": "en"
     },
+    "searchBarConfig": {},
+    "searchProviders": [
+      {
+        "id": "search-provider/bing-maps",
+        "type": "bing-maps-search-provider",
+        "name": "translate#viewModels.searchLocations",
+        "url": "https://dev.virtualearth.net/",
+        "flightDurationSeconds": 1.5,
+        "minCharacters": 0,
+        "isOpen": true,
+        "culture": "ja",
+        "primaryCountry": "日本"
+      }
+    ],
     "helpContent": [
       {
         "title": "translate#gettingstarted.title",
