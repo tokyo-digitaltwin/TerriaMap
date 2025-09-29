@@ -41,14 +41,14 @@
             link: "http://www.example.com"
         },*/
     // This is used in various text messages. You should also set <title> in index.html
-    "appName": "東京都デジタルツイン3Dビューア (β版)",
+    "appName": "東京都デジタルツイン3Dビューア",
 
     // See comments in lib/Views/global.scss for further information about customising colors, logos, fonts etc.
     "brandBarElements": [
-      "<a target=\"_blank\" href=\"https://info.tokyo-digitaltwin.metro.tokyo.lg.jp/\" style=\"background: #fff; width: 100%; margin-bottom: 16px;\" rel=\"noopener\"><img src=\"images/tokyo_metro_logo.png\" style=\"width: 280px;\" title=\"東京都デジタルツイン3Dビューア (β版)\" /></a>"
+      "<a target=\"_blank\" href=\"https://info.tokyo-digitaltwin.metro.tokyo.lg.jp/\" style=\"background: #fff; width: 100%; margin-bottom: 16px;\" rel=\"noopener\"><img src=\"images/tokyo_metro_logo.png\" style=\"width: 280px;\" title=\"東京都デジタルツイン3Dビューア\" /></a>"
     ],
     "brandBarSmallElements": [
-      "<a target=\"_blank\" href=\"https://info.tokyo-digitaltwin.metro.tokyo.lg.jp/\" style=\"display: flex;\" rel=\"noopener\"><img src=\"images/tokyo_metro_logo_small.png\" style=\"min-width: 40px; max-width: 120px; width: calc(100vw - 280px);\"title=\"東京都デジタルツイン3Dビューア (β版)\" /></a>"
+      "<a target=\"_blank\" href=\"https://info.tokyo-digitaltwin.metro.tokyo.lg.jp/\" style=\"display: flex;\" rel=\"noopener\"><img src=\"images/tokyo_metro_logo_small.png\" style=\"min-width: 40px; max-width: 120px; width: calc(100vw - 280px);\"title=\"東京都デジタルツイン3Dビューア\" /></a>"
     ],
     // Shown when things go wrong.
     "supportEmail": "",
@@ -91,114 +91,20 @@
     "searchBarConfig": {},
     "searchProviders": [
       {
-        "id": "search-provider/bing-maps",
-        "type": "bing-maps-search-provider",
+        "id": "search-provider/mapbox",
+        "type": "mapbox-search-provider",
         "name": "translate#viewModels.searchLocations",
-        "url": "https://dev.virtualearth.net/",
+        "url": "https://api.mapbox.com/search/searchbox/v1/forward",
         "flightDurationSeconds": 1.5,
         "minCharacters": 0,
         "isOpen": true,
-        "culture": "ja",
-        "primaryCountry": "日本"
+        "country": "jp",
+        "language": "ja",
+        "limit": 10,
+        "proximity": "139.6917337,35.6895014"
       }
     ],
     "helpContent": [
-      {
-        "title": "translate#gettingstarted.title",
-        "itemName": "gettingstarted",
-        "paneMode": "videoAndContent",
-        "markdownText": "translate#gettingstarted.markdownText",
-        "icon": "video",
-        "videoUrl": "translate#gettingstarted.videoUrl",
-        "placeholderImage": "translate#gettingstarted.placeholderImage"
-      },
-      {
-        "title": "translate#stepbystepguide.title",
-        "itemName": "stepbystepguide",
-        "paneMode": "trainer",
-        "markdownText": "translate#stepbystepguide.markdownText",
-        "icon": "oneTwoThree",
-        "trainerItems": [
-          {
-            "title": "translate#stepbystepguide.gettingstarted.title",
-            "footnote": "",
-            "steps": [
-              {
-                "title": "translate#stepbystepguide.gettingstarted.step1.title",
-                "markdownDescription": "translate#stepbystepguide.gettingstarted.step1.markdownDescription"
-              },
-              {
-                "title": "translate#stepbystepguide.gettingstarted.step2.title",
-                "markdownDescription": "translate#stepbystepguide.gettingstarted.step2.markdownDescription"
-              },
-              {
-                "title": "translate#stepbystepguide.gettingstarted.step3.title",
-                "markdownDescription": "translate#stepbystepguide.gettingstarted.step3.markdownDescription"
-              },
-              {
-                "title": "translate#stepbystepguide.gettingstarted.step4.title"
-              },
-              {
-                "title": "translate#stepbystepguide.gettingstarted.step5.title"
-              },
-              {
-                "title": "translate#stepbystepguide.gettingstarted.step6.title"
-              },
-              {
-                "title": "translate#stepbystepguide.gettingstarted.step7.title"
-              },
-              {
-                "title": "translate#stepbystepguide.gettingstarted.step8.title"
-              }
-            ]
-          }
-          // -- Uncomment to enable the following trainer guides --
-          // {
-          //   "title": "translate#stepbystepguide.satelliteimagery.title",
-          //   "footnote": "translate#stepbystepguide.satelliteimagery.footnote",
-          //   "steps": [
-          //     {
-          //       "title": "translate#stepbystepguide.satelliteimagery.step1.title",
-          //       "markdownDescription": "translate#stepbystepguide.satelliteimagery.step1.markdownDescription"
-          //     },
-          //     {
-          //       "title": "translate#stepbystepguide.satelliteimagery.step2.title",
-          //       "markdownDescription": "translate#stepbystepguide.satelliteimagery.step2.markdownDescription"
-          //     },
-          //     {
-          //       "title": "translate#stepbystepguide.satelliteimagery.step3.title",
-          //     "markdownDescription": "translate#stepbystepguide.satelliteimagery.step3.markdownDescription"
-          //     },
-          //     {
-          //       "title": "translate#stepbystepguide.satelliteimagery.step4.title",
-          //       "markdownDescription": "translate#stepbystepguide.satelliteimagery.step4.markdownDescription"
-          //     }
-          //   ]
-          // },
-          // {
-          //   "title": "translate#stepbystepguide.comparetimeseries.title",
-          //   "footnote": "translate#stepbystepguide.comparetimeseries.footnote",
-          //   "steps": [
-          //     {
-          //       "title": "translate#stepbystepguide.comparetimeseries.step1.title",
-          //       "markdownDescription": "translate#stepbystepguide.comparetimeseries.step1.markdownDescription"
-          //     },
-          //     {
-          //       "title": "translate#stepbystepguide.comparetimeseries.step2.title",
-          //       "markdownDescription": "translate#stepbystepguide.comparetimeseries.step2.markdownDescription"
-          //     },
-          //     {
-          //       "title": "translate#stepbystepguide.comparetimeseries.step3.title",
-          //       "markdownDescription": "translate#stepbystepguide.comparetimeseries.step3.markdownDescription"
-          //     },
-          //     {
-          //       "title": "translate#stepbystepguide.comparetimeseries.step4.title",
-          //       "markdownDescription": "translate#stepbystepguide.comparetimeseries.step4.markdownDescription"
-          //     }
-          //   ]
-          // }
-        ]
-      }
       // {
       //   "icon": "story",
       //   "itemName": "storymigration",
@@ -383,7 +289,7 @@
     //       content: "The way the dataset appears in the preview window. We recommend true colour to search for cloud-free images"
     //   }
     // ]
-    "bingMapsKey": "",
+    "mapboxKey": "",
     "storyEnabled": true,
     "theme": {
       "logoPaddingVertical": 0,
