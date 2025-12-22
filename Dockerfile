@@ -1,8 +1,8 @@
 # develop container
-FROM node:16 as develop
+FROM node:20 AS develop
 
 # build container
-FROM node:16 as build
+FROM node:20 AS build
 USER node
 
 COPY --chown=node:node . /app
@@ -13,15 +13,16 @@ RUN yarn install --network-timeout 1000000
 RUN yarn gulp release
 
 # deploy container
-FROM node:16-slim as deploy
+FROM node:20-slim AS deploy
 
 USER node
 
 WORKDIR /app
 
-COPY --from=build /app/wwwroot wwwroot
-COPY --from=build /app/node_modules node_modules
-COPY --from=build /app/devserverconfig.json serverconfig.json
+# Without the chown when copying directories, wwwroot is owned by root:root.
+COPY --from=build --chown=node:node /app/wwwroot wwwroot
+COPY --from=build --chown=node:node /app/node_modules node_modules
+COPY --from=build /app/serverconfig.json serverconfig.json
 COPY --from=build /app/index.js index.js
 COPY --from=build /app/package.json package.json
 COPY --from=build /app/version.js version.js

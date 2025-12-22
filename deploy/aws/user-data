@@ -1,21 +1,15 @@
 #cloud-config
 
-# update and install packages, reboot if necessary
-apt_sources:
-  - source: deb https://deb.nodesource.com/node_8.x bionic main
-    keyid: 1655a0ab68576280
-
 package_upgrade: true
 package_reboot_if_required: true
 packages:
- - ntp
- - python-pip
- - nodejs
+ - curl
+ - unzip
+ - chrony
  - varnish
 
 # any files to create
 write_files:
-
  - path: /etc/systemd/system/varnish.service
    content: |
     [Unit]
@@ -37,7 +31,20 @@ write_files:
 # run all the commands to set this instance up
 runcmd:
  - echo 'APT::Periodic::Unattended-Upgrade "1";' >> /etc/apt/apt.conf.d/10periodic
- - pip install awscli
+ - mkdir -p /tmp/awscli-install
+ - cd /tmp/awscli-install
+ - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+ - unzip -q awscliv2.zip
+ - ./aws/install
+ - aws --version
+ - rm -rf /tmp/awscli-install
+ - mkdir -p /tmp/nodejs
+ - chmod -R 777 /tmp/nodejs
+ - cd /tmp/nodejs
+ - sudo -u ubuntu curl -o ./install.sh https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh
+ - sudo -u ubuntu bash ./install.sh
+ - sudo -u ubuntu /bin/bash -c 'source /home/ubuntu/.bashrc'
+ - sudo -u ubuntu /bin/bash -c 'export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && nvm install --lts'
 
 # copy and extract the webapps from S3
  - mkdir /tmp/ramfs
@@ -56,9 +63,9 @@ runcmd:
 
 # Create service
  - cd /opt/{{deploymentName}}
- - ./node_modules/pm2/bin/pm2 startup systemd -u ubuntu --hp /home/ubuntu
- - sudo -u ubuntu ./node_modules/.bin/pm2 start ecosystem-production.config.js --update-env --env production
- - sudo -u ubuntu ./node_modules/.bin/pm2 save
+ - sudo -u ubuntu /bin/bash -c 'export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && ./node_modules/pm2/bin/pm2 startup systemd -u ubuntu --hp /home/ubuntu'
+ - sudo -u ubuntu /bin/bash -c 'export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && ./node_modules/.bin/pm2 start ecosystem-production.config.js --update-env --env production'
+ - sudo -u ubuntu /bin/bash -c 'export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && ./node_modules/.bin/pm2 save'
 
 # start/restart services
  - systemctl daemon-reload

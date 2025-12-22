@@ -31,7 +31,7 @@ export default class IframeCutromComponent extends CustomComponent {
     ];
   }
   processNode(
-    context: ProcessNodeContext,
+    _context: ProcessNodeContext,
     node: DomElement
     // children: ReactElement[],
     // index: number
