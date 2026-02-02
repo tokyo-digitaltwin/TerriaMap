@@ -104,6 +104,7 @@
         "proximity": "139.6917337,35.6895014"
       }
     ],
+    "prefectureOptions": ["東京都", "静岡県", "石川県"],
     "helpContent": [
       // {
       //   "icon": "story",

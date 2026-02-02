@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "module": "esNext",
+    "target": "es6",
+    "moduleResolution": "node",
+    "outDir": "dist/",
+    "rootDir": "src/",
+    "jsx": "react",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "checkJs": false,
+    "strict": true,
+    "esModuleInterop": true,
+    //"skipLibCheck": true
+    // Although this can result in subtle bugs, they are required for us to
+    // ignore TS errors on js files inside terria.  We'll get rid of them when
+    // we have a proper terria bundle with type declarations.
+    //"noImplicitAny": false,
+    //"strictNullChecks": false,
+    // Should these thirdparty types be included in terriajs tsconfig "types" settings,
+    // so that we can avoid specifying it here?
+    // Refer: https://www.typescriptlang.org/tsconfig#types
+    "typeRoots": [
+      "../../node_modules/terriajs/lib/ThirdParty"
+      //"../../node_modules"
+      // "node_modules"
+    ]
+  },
+  "include": ["./src/**/*"]
+}

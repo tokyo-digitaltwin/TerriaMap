@@ -49,7 +49,7 @@
     "emptyArea": "「データを追加」ボタンから、表示するデータを追加できます"
   },
   "welcomeMessage": {
-    "welcomeMessage": "防災やまちづくりなど様々な分野のデータを、3D地図上に重ねて表示することができます。(データは随時追加予定です)",
+    "welcomeMessage": "防災やまちづくりなど様々な分野のデータを、3D地図上に重ねてみることができます。(データは随時追加予定です)",
     "title": "3Dビューアで東京を見てみよう！",
     "policyUrl": "https://info.tokyo-digitaltwin.metro.tokyo.lg.jp/sitepolicy/"
   },
@@ -58,7 +58,7 @@
     "menuPaneBody": "初めて3Dビューアをご利用いただく方は「操作方法を見る」から操作方法をご確認ください。また、機能毎に操作説明動画も用意しておりますので、ご視聴ください。\n\nより詳細な操作方法については、操作マニュアル（PDF）をご覧ください。「基礎編」「応用編」とレベル別に操作方法をまとめております。\n\nご不明な点がございましたら東京都デジタルツイン3Dビューア運営事務局 [digitaltwin.tokyo.website@ml.mri.co.jp](mailto:digitaltwin.tokyo.website@ml.mri.co.jp) までお問い合わせください。"
   },
   "feedback": {
-    "feedbackPreamble": "東京都「デジタルツイン実現プロジェクト」へのご意見・ご要望をお待ちしております。<br> → <a target=\"_blank\" href=\"https://docs.google.com/forms/d/e/1FAIpQLSeOgPFBUBm-9V_66M1bImEX9ZW_gDU1OkaXBZpN08mw0VfJAA/viewform?usp=sf_link\">ご意見・ご要望フォーム</a>"
+    "feedbackPreamble": "東京都「デジタルツイン実現プロジェクト」へのご意見・ご要望をお待ちしております。<br> → <a target=\"_blank\" href=\"https://docs.google.com/forms/d/e/1FAIpQLSeOgPFBUBm-9V_66M1bImEX9ZW_gDU1OkaXBZpN08mw0VfJAA/viewform\">ご意見・ご要望フォーム</a>"
   },
   "map": {
     "extraCreditLinks": {
