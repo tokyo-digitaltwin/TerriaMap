@@ -22,7 +22,12 @@ privateserverconfig.json
 wwwroot/privateconfig.json
 deploy/packages/
 deploy/work/
-packages/
+packages/terriajs"
+packages/cesium
+packages/terriajs-server
+packages/plugin-sample
+packages/cesiumgs-ion-sdk-measurements-6.0.0
+
 pancake/
 yarn-error.log
 .npmrc
