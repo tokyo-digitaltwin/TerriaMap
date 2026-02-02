@@ -16,7 +16,7 @@
   https://3dview.tokyo-digitaltwin.metro.tokyo.lg.jp/<br><br>
 - [TerriaJs の公式ドキュメント](https://docs.terria.io/guide/)にはない東京都デジタルツイン 3D ビューア独自の設定項目については、[こちら](https://github.com/tokyo-digitaltwin/terriajs/blob/tokyo_digitaltwin/CUSTOM_FEATURES.md)を参照ください。
 
-## 【 3D ビューア構築時の留意事項】
+### 【 3D ビューア構築時の留意事項】
 
 - 東京都デジタルツイン 3D ビューアでは「高さ計測機能」をご利用いただけますが、本リポジトリをクローンして 3D ビューアを構築し、　高さ計測機能を使用する場合は、Cesium ion SDK のライセンスが必要となります。
   　 Cesium ion SDK
